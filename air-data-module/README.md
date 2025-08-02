@@ -16,5 +16,7 @@ There are three variands of the Air Data Module depending on airspeed.&#x20;
 
 
 
-It can be purchased her
+It can be purchased here:
+
+{% embed url="https://www.beyondrobotix.com/products/air-data-module" %}
 
