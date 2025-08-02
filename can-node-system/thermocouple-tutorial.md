@@ -7,6 +7,8 @@ icon: building-columns
 
 # Thermocouple tutorial
 
+## Intro
+
 Want to integrate a sensor into Ardupilot or PX4? Arduino DroneCAN and the Beyond Robotix CAN node let you do that very quickly. This tutorial runs through integrating the Adafruit MCP9600 thermocouple sensor, resulting in us being able to send temperature messages over DroneCAN. The big advantage of using the Arduino framework is access to Arduino libraries. Almost always, there are libraries available for the sensor you want to use. This saves development time. The Arduino framework is also simple to work with, and the Platformio + VS code platform allows easy development from small to complicated projects.
 
 Using custom firmware allows lots of options, such as integrating a battery monitor + thermocouple and sending all the information with one device in one message. You could action tasks based on the thermocouple onboard the node, e.g. opening a hatch if the battery is getting too hot.
@@ -15,7 +17,7 @@ You could integrate GPS receivers, new airspeed sensors, fuel sensors, gas senso
 
 
 
-### Hardware Requirements:
+### Hardware Requirements
 
 * Beyond Robotix CAN node Dev kit
 * A CAN enabled flight controller or sniffer
@@ -125,7 +127,7 @@ then, they have a bunch of other options but the two we're interested in for the
 
 So, with this information, we can now write our DroneCAN application.
 
-
+## Writing our app
 
 In setup(), we wrote code to initialise the MCP9600, and send some CAN debug messages and serial messages if it doesn't initialise properly.
 
