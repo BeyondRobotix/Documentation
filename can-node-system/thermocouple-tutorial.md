@@ -17,7 +17,7 @@ You could integrate GPS receivers, new airspeed sensors, fuel sensors, gas senso
 
 
 
-### Hardware Requirements
+## Hardware Requirements
 
 * Beyond Robotix CAN node Dev kit
 * A CAN enabled flight controller or sniffer
@@ -26,7 +26,7 @@ You could integrate GPS receivers, new airspeed sensors, fuel sensors, gas senso
 
 
 
-### Getting started
+## Getting started
 
 To start, we should download the latest release of ArduinoDroneCAN from:
 
@@ -78,7 +78,7 @@ We can see the temperature field which responds to the built in MCU temperature 
 
 
 
-### Getting MCP9600 data
+## Getting MCP9600 data
 
 We’ve chosen to use the Adafruit library, although there are a few MCP9600 libraries to choose from. Download the latest release, unzip and add it to the “lib” folder. Make sure there are no nested folders! The library can also be installed from the platformio library manager. The “BusIO” library is also needed. Platformio may install this for you.
 
