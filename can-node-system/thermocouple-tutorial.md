@@ -32,7 +32,7 @@ To start, we should download the latest release of ArduinoDroneCAN from:
 
 The code we will run through is in examples/thermocouple-mcp9600 which is here:
 
-{% @github-files/github-code-block url="https://github.com/BeyondRobotix/Arduino-DroneCAN/tree/master/examples/thermocouple-MCP9600" %}
+{% embed url="https://github.com/BeyondRobotix/Arduino-DroneCAN/tree/master/examples/thermocouple-MCP9600" %}
 
 We’ll need to download a few things to work with the software. We’ve got these setup instructions on our documentation site here:
 
@@ -52,7 +52,9 @@ You should then see “SUCCESS” shown in the terminal. If you don’t, make su
 
 <figure><img src="../.gitbook/assets/Picture3 (1).png" alt=""><figcaption></figcaption></figure>
 
-We can now see what CAN messages are being sent by the Node. We’ll use DroneCAN GUI tool in this example, however, Mission Planner can also be used for CAN packet inspection. [https://dronecan.github.io/GUI\_Tool/Overview/](https://dronecan.github.io/GUI_Tool/Overview/)
+We can now see what CAN messages are being sent by the Node. We’ll use DroneCAN GUI tool in this example, however, Mission Planner can also be used for CAN packet inspection.&#x20;
+
+{% embed url="https://dronecan.github.io/GUI_Tool/Overview/" %}
 
 <figure><img src="../.gitbook/assets/Picture4.png" alt=""><figcaption></figcaption></figure>
 
