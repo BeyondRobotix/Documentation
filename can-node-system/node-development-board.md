@@ -34,7 +34,7 @@ The holes on the carrier board are M3.
 
 The Dev board interfaces follow Pixhawk pin out standards or RC common convention where applicable. Please double check the interface pin outs for your application. We've included a lot of information on the back of the board which should help with most questions.
 
-<figure><img src="../.gitbook/assets/image (3).png" alt=""><figcaption><p>Rear of the CAN Node development board</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (3) (1).png" alt=""><figcaption><p>Rear of the CAN Node development board</p></figcaption></figure>
 
 ### CAN
 
@@ -114,7 +114,7 @@ The Micro Node has 8 GPIO pins available. These have been pinned out into a stan
 When using Arduino DroneCAN, these pins can be accessed in your program using `PA_8` in your code for PA8
 {% endhint %}
 
-<figure><img src="../.gitbook/assets/image.png" alt=""><figcaption><p>GPIO and ADC headers</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (3).png" alt=""><figcaption><p>GPIO and ADC headers</p></figcaption></figure>
 
 ### ADC
 
