@@ -28,7 +28,7 @@ You could integrate GPS receivers, new airspeed sensors, fuel sensors, gas senso
 
 To start, we should download the latest release of ArduinoDroneCAN from:
 
-{% @github-files/github-code-block url="https://github.com/BeyondRobotix/Arduino-DroneCAN/releases" %}
+{% embed url="https://github.com/BeyondRobotix/Arduino-DroneCAN/releases" %}
 
 The code we will run through is in examples/thermocouple-mcp9600 which is here:
 
