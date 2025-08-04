@@ -32,8 +32,8 @@ You can integrate your sensor how you like with minimal code and using pre-exist
 
 Perfect for your custom hardware solutions, or if you want to implement your own logic!
 
-{% content-ref url="arduino-dronecan.md" %}
-[arduino-dronecan.md](arduino-dronecan.md)
+{% content-ref url="arduino-dronecan/" %}
+[arduino-dronecan](arduino-dronecan/)
 {% endcontent-ref %}
 
 

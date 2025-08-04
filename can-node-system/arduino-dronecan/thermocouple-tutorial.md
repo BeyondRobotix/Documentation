@@ -11,7 +11,7 @@ icon: building-columns
 
 Do you want to integrate a sensor into Ardupilot or PX4? Arduino DroneCAN and the Beyond Robotix CAN node let you do that very quickly. This tutorial runs through integrating the Adafruit MCP9600 thermocouple sensor, resulting in us being able to send temperature messages over DroneCAN. The big advantage of using the Arduino framework is access to Arduino libraries. Almost always, there are libraries available for the sensor you want to use. This saves development time. The Arduino framework is also simple to work with, and the Platformio + VS code platform allows easy development from small to complicated projects.
 
-<figure><img src="../.gitbook/assets/title photo-Photoroom (1).jpg" alt="" width="375"><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/title photo-Photoroom (1).jpg" alt="" width="375"><figcaption></figcaption></figure>
 
 Using custom firmware allows lots of options, such as integrating a battery monitor + thermocouple and sending all the information with one device in one message. You could action tasks based on the thermocouple onboard the node, e.g. opening a hatch if the battery is getting too hot.
 
@@ -42,33 +42,33 @@ We’ll need to download a few things to work with the software. We’ve got the
 
 We’ll also need to get our hardware setup. You’ll need a DroneCAN compatible flight controller or sniffer. We’ll use a Cube Orange. Then connect your Beyond Robotix CAN node to the flight controller via a CAN cable. Also, connect your STLINK to the debug port on the CAN node. Lastly, ensure the switch next to the debug port (`SW1`) is set to '1'.
 
-<figure><img src="../.gitbook/assets/hardware-Photoroom.jpg" alt="" width="375"><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/hardware-Photoroom.jpg" alt="" width="375"><figcaption></figcaption></figure>
 
 With the repository downloaded and our tools installed, we can build the default example to make sure it’s all working correctly. The default example sends a BatteryInfo message with values from ADC pins PA0 and PA1 as well as MCU temperature.
 
-<figure><img src="../.gitbook/assets/Picture1.png" alt="" width="563"><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Picture1.png" alt="" width="563"><figcaption></figcaption></figure>
 
 You should then see “SUCCESS” shown in the terminal. If you don’t, make sure your STLINK is connected correctly and power is being given to the CAN node via the flight controller.&#x20;
 
-<figure><img src="../.gitbook/assets/Picture3 (1).png" alt="" width="563"><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Picture3 (1).png" alt="" width="563"><figcaption></figcaption></figure>
 
 We can now see what CAN messages are being sent by the Node. We’ll use DroneCAN GUI tool in this example, however, Mission Planner can also be used for CAN packet inspection.&#x20;
 
 {% embed url="https://dronecan.github.io/GUI_Tool/Overview/" %}
 
-<figure><img src="../.gitbook/assets/Picture4.png" alt="" width="310"><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Picture4.png" alt="" width="310"><figcaption></figcaption></figure>
 
 Once connected, we’ll see our Node showing in the list, (you may need to set the Local node ID, press the tick in the top left)
 
-<figure><img src="../.gitbook/assets/Picture5.png" alt="" width="563"><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Picture5.png" alt="" width="563"><figcaption></figcaption></figure>
 
 We can see the example parameters in Node properties:
 
-<figure><img src="../.gitbook/assets/Picture7.png" alt="" width="375"><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Picture7.png" alt="" width="375"><figcaption></figcaption></figure>
 
 And we can also see the battery message being sent (which can be found in Tools > Subscriber)
 
-<figure><img src="../.gitbook/assets/Picture8.png" alt="" width="563"><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Picture8.png" alt="" width="563"><figcaption></figcaption></figure>
 
 We can see the temperature field which responds to the built in MCU temperature sensor. “Voltage” and “current” are showing the raw ADC values from PA1 and PA0 respectively.
 

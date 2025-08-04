@@ -126,8 +126,8 @@ We wrote an Arduino library for using DroneCAN on this Node out of the box!
 
 You can integrate your sensor how you like with minimal code. Includes bootloader support so your apps can be updated over CAN.
 
-{% content-ref url="arduino-dronecan.md" %}
-[arduino-dronecan.md](arduino-dronecan.md)
+{% content-ref url="arduino-dronecan/" %}
+[arduino-dronecan](arduino-dronecan/)
 {% endcontent-ref %}
 
 **AP\_Periph**
