@@ -1,11 +1,11 @@
 ---
 description: >-
   A demo of the Arduino DroneCAN library with Beyond Robotix CAN node, using the
-  MCP 9600 thermocouple reader.
+  MCP9600 thermocouple reader.
 icon: building-columns
 ---
 
-# Thermocouple tutorial
+# Thermocouple Tutorial
 
 ## Intro
 
