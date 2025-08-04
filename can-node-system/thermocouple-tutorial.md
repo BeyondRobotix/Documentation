@@ -177,16 +177,17 @@ mcp.setThermocoupleType(MCP9600_TYPE_K);
 
 Another point is we don't use the `void loop()` that arduino uses normally. Instead we have a `while(true){` running at the end of the `void setup()` function.
 
-<pre class="language-cpp"><code class="lang-cpp">void setup()
+```cpp
+void setup()
 {
-<strong>    #Set up Code
-</strong><strong>    
-</strong>    while(true){
+    # Set up Code
+    
+    while(true){
         # Looping Code
         
-<strong>    }  
-</strong><strong>}  
-</strong></code></pre>
+    }  
+}  
+```
 
 Now, in the example, we've written in some logic which lets you send either a temperature packet or a battery packet depending on some parameters. At the core of it, we send a DroneCAN message like this:
 
