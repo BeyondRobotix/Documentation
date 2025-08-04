@@ -12,7 +12,7 @@
   * [Node Development Board V1.0](can-node-system/node-development-board-v1.0.md)
   * [Micro Node](can-node-system/micro-node.md)
   * [Arduino DroneCAN](can-node-system/arduino-dronecan.md)
-  * [Thermocouple tutorial](can-node-system/thermocouple-tutorial.md)
+  * [Thermocouple Tutorial](can-node-system/thermocouple-tutorial.md)
   * [AP Periph](can-node-system/ap-periph.md)
 * [Air Data Module](air-data-module/README.md)
   * [Quick Start Guide](air-data-module/quick-start-guide.md)
