@@ -5,7 +5,7 @@ The Beyond Robotix Air Data Module includes the following:
 * AUAV Sensor Board
 * Micro CAN Node
 * Pitot Static Tube
-* 2x Silicone tubes
+* Silicone tube
 * Case
 
 <figure><img src="../.gitbook/assets/ADM_bundle_edited-Photoroom.jpg" alt="" width="375"><figcaption></figcaption></figure>
@@ -29,7 +29,7 @@ The Beyond Robotix Air Data Module includes the following:
 <figure><img src="../.gitbook/assets/Hoses.png" alt="" width="375"><figcaption></figcaption></figure>
 
 {% hint style="success" %}
-Ensure to fix the **high** side (H) of the sensor to the **straight** barb on the pitot-static tube and the **low** side (L) of the sensor to the **diagonal** barb.
+Ensure the **high** side (H) of the sensor is connected to the **straight** barb on the pitot-static tube (going to the total pressure port) and the **low** side (L) of the sensor to the **diagonal** barb (going to the static ports).
 {% endhint %}
 
 5. Connect to one of your CAN ports on your flight controller
