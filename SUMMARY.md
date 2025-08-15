@@ -10,6 +10,7 @@
   * [Troubleshooting](kahuna/troubleshooting.md)
 * [CAN Node System](can-node-system/README.md)
   * [Node Development Board V1.0](can-node-system/node-development-board-v1.0.md)
+  * [Node Development Board V1.1](can-node-system/node-development-board-v1.1.md)
   * [Micro Node](can-node-system/micro-node.md)
   * [Arduino DroneCAN](can-node-system/arduino-dronecan/README.md)
     * [Thermocouple Tutorial](can-node-system/arduino-dronecan/thermocouple-tutorial.md)
