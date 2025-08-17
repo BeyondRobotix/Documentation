@@ -7,7 +7,7 @@ icon: square-code
 
 
 
-\[MAIN PICTURE HERE]
+<figure><img src="../.gitbook/assets/node-front.png" alt="" width="375"><figcaption></figcaption></figure>
 
 
 
@@ -22,7 +22,7 @@ This is a carrier board for the Micro CAN node.&#x20;
 
 ## Store
 
-\[STORE LINK HERE]
+{% embed url="https://www.beyondrobotix.com/products/micro-can-node-development-bundle" %}
 
 ## Mechanical
 
@@ -38,7 +38,7 @@ The holes on the carrier board are M3.
 
 The Dev board interfaces follow Pixhawk pin out standards or RC common convention where applicable. Please double check the interface pin outs for your application. We've included a lot of information on the back of the board which should help with most questions.
 
-
+<figure><img src="../.gitbook/assets/no-node-back.png" alt=""><figcaption></figcaption></figure>
 
 ### CAN
 
