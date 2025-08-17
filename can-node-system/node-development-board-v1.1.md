@@ -30,9 +30,9 @@ The CAD file for the node development carrier can be found below, along with the
 
 The holes on the carrier board are M3.
 
-\[CAD FILE HERE]
+{% file src="../.gitbook/assets/V1.1 Beyond Robotix CAN Dev board.step" %}
 
-\[IMAGE WITH DIMENSIONS HERE]
+<figure><img src="../.gitbook/assets/dims.png" alt=""><figcaption></figcaption></figure>
 
 ## Available interfaces
 
@@ -95,15 +95,42 @@ This is the program upload/console port for the Micro Node. See the STLINK heade
 
 ### GPIO/PWM
 
-\[DESCRIPTION]
+The dev node has lots of GPIOs and PWMs available. These are denoted by a "\~" on the board pin.
+
+PWMs:
+
+* PA0
+* PA1
+* PA8
+* PA10
+* PA11
+* PB15
+* PA15
 
 {% hint style="info" %}
 When using Arduino DroneCAN, these pins can be accessed in your program using `PA_8` in your code for PA8
 {% endhint %}
 
+Any logical pin can be used as a GPIO.
+
 ### ADC
 
-\[DESCRIPTION]
+The Dev node has 8 ADCs pinned out, denoted by a \* by the board pin.
+
+* PA0
+* PA1
+* PB0
+* PA6
+* PA4
+* PB1
+* PA7
+* PA5
+
+These pins can be read in ArduinoDroneCAN like:
+
+```cpp
+analogRead(PA0);
+```
 
 {% hint style="danger" %}
 The maximum voltage of the ADC pins is 3.3V.
