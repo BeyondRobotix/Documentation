@@ -18,7 +18,4 @@
   * [AP Periph](can-node-system/ap-periph.md)
 * [Air Data Module](air-data-module/README.md)
   * [Quick Start Guide](air-data-module/quick-start-guide.md)
-  * [Pinout](air-data-module/pinout.md)
-  * [Parameters](air-data-module/parameters.md)
-  * [Downloads](air-data-module/downloads.md)
 * [Engineering Change Notice](engineering-change-notice.md)
