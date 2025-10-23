@@ -16,6 +16,6 @@
   * [Arduino DroneCAN](can-node-system/arduino-dronecan/README.md)
     * [Thermocouple Tutorial](can-node-system/arduino-dronecan/thermocouple-tutorial.md)
   * [AP Periph](can-node-system/ap-periph.md)
-* [Air Data Module](air-data-module/README.md)
-  * [Quick Start Guide](air-data-module/quick-start-guide.md)
 * [Engineering Change Notice](engineering-change-notice.md)
+* [AUAV Air Data Module](auav-air-data-module/README.md)
+  * [Quick Start Guide](auav-air-data-module/quick-start-guide.md)
