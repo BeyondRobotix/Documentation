@@ -2,7 +2,7 @@
 description: DroneCAN enabled AUAV absolute and differential pressure sensor
 ---
 
-# Air Data Module
+# AUAV Air Data Module
 
 ## Introduction
 
@@ -42,29 +42,10 @@ The computation on the Air Data Module is performed on the [CAN Node](../can-nod
 
 ## Parameters
 
-#### NODEID: CAN Node ID&#x20;
-
-ID of the CAN Node on the CAN bus
-
-Range: 1-125
-
-**SENSOR\_PRESSURE: Pressure Range of AUAV Sensor**
-
-This is the type of AUAV sensor installed on the Air Data Module.&#x20;
-
-
-
-L05D = 5
-
-L10D = 10
-
-L30D = 30
-
-L60D = 60
-
-L100D = 100
-
-
+| Parameter        | Description                                                       | Accepted Values                                                       |
+| ---------------- | ----------------------------------------------------------------- | --------------------------------------------------------------------- |
+| NodeID           | The ID the node will appear as in the CAN bus                     | 1-127                                                                 |
+| Sensor\_Pressure | This is the type of AUAV sensor installed on the Air Data Module. | <p>L05D = 5<br>L10D = 10<br>L30D = 30<br>L60D = 60<br>L100D = 100</p> |
 
 ## Firmware
 
@@ -97,32 +78,27 @@ You are now on the latest version of the firmware!
 
 ## Mechanical
 
-Images of hole spacing and overall dimensions are provided below. Additionally, the case STL files can also be found below.
+Images of hole spacing and overall dimensions are provided below. Additionally, the case STL files can&#x20;
 
-### Hole spacing
+### Case Specifications
 
-<figure><img src="../.gitbook/assets/image (18).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/SLS Case.jpg" alt="" width="375"><figcaption></figcaption></figure>
 
-### Overall dimensions
+Specifcations for the size and shape of the case:
 
-<figure><img src="../.gitbook/assets/image (19).png" alt=""><figcaption></figcaption></figure>
+{% file src="../.gitbook/assets/Mechanical Drawing Air Data Module Case.pdf" %}
 
+Files to 3D print/edit the included case:
 
+{% file src="../.gitbook/assets/BR AUAV ADM Lid.3mf" %}
 
+{% file src="../.gitbook/assets/BR AUAV ADM Base.3mf" %}
 
+### PCB Specifications
 
-### PCB dimensions
+{% file src="../.gitbook/assets/Mechanical Drawing Air Data Module.pdf" %}
 
-Bounding box: 20x26x10.5mm
+{% file src="../.gitbook/assets/AUAV DroneCAN Air Data Module.step" %}
 
 Please note: this product is designed to require the case. Without it, the Micro CAN node will need mechanically stabilising through another means.
 
-
-
-### Case Download
-
-You can 3D print the cases using the attached files:
-
-{% file src="../.gitbook/assets/Airspeed Base (1).stl" %}
-
-{% file src="../.gitbook/assets/Airspeed Lid (1).stl" %}
