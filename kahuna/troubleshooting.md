@@ -22,7 +22,7 @@ Now that your GCS is allows to communicate on private networks, you need to set 
 
 1. Select Start , then type "settings". Select Settings > Network & internet > Wi-Fi.
 2. On the Wi-Fi settings screen, select Manage known networks, and select the Kahuna Wi-Fi network you're connected to.
-3. On the Wi-Fi network screen, under Network profile type, select Public (Recommended)
+3. On the Wi-Fi network screen, under Network profile type, select Private network
 
 
 
