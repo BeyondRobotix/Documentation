@@ -25,7 +25,7 @@ There are a few ways of working with Arduino Code, we recommend the following st
 
 1. Install Visual Studio Code [https://code.visualstudio.com/download](https://code.visualstudio.com/download)
 2. Install the PlatformIO extension [https://platformio.org/install/ide?install=vscode](https://platformio.org/install/ide?install=vscode)
-3. Download the project [https://github.com/BeyondRobotix/Arduino-DroneCAN/releases/tag/v1.3.3](https://github.com/BeyondRobotix/Arduino-DroneCAN/releases/tag/v1.3.3)
+3. Download the project [https://github.com/BeyondRobotix/Arduino-DroneCAN/releases/tag/V1.3.4](https://github.com/BeyondRobotix/Arduino-DroneCAN/releases/tag/V1.3.4)
 4. Connect your STLINK to your CAN node
 5. Press upload!
 
