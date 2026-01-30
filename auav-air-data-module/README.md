@@ -94,6 +94,10 @@ Files to 3D print/edit the included case:
 
 {% file src="../.gitbook/assets/BR AUAV ADM Base.3mf" %}
 
+{% file src="../.gitbook/assets/BR AUAV ADM Lid.step" %}
+
+{% file src="../.gitbook/assets/BR AUAV ADM Base.step" %}
+
 ### PCB Specifications
 
 {% file src="../.gitbook/assets/Mechanical Drawing Air Data Module.pdf" %}

@@ -52,7 +52,7 @@ The table below outlines the meaning of the status light indications.
 
 <figure><img src="../.gitbook/assets/EngineeringDrawingV1.2.png" alt=""><figcaption><p>Physical Dimensions of the Kahuna</p></figcaption></figure>
 
-{% file src="../.gitbook/assets/KahunaV1.2 (1).step" %}
+{% file src="../.gitbook/assets/KahunaV1.2 (2).step" %}
 CAD file for the Kahuna
 {% endfile %}
 
