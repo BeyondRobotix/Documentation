@@ -19,3 +19,4 @@
 * [Engineering Change Notice](engineering-change-notice.md)
 * [AUAV Air Data Module](auav-air-data-module/README.md)
   * [Quick Start Guide](auav-air-data-module/quick-start-guide.md)
+* [RM3100 DroneCAN Compass](rm3100-dronecan-compass.md)
