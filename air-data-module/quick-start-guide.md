@@ -1,5 +1,9 @@
 # Quick Start Guide
 
+{% hint style="info" %}
+The following also applies to the Air Data Module Mini when refereing to the AUAV sensor.
+{% endhint %}
+
 The Beyond Robotix Air Data Module includes the following:
 
 * AUAV Sensor Board

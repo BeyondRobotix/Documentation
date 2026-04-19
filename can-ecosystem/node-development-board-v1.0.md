@@ -1,9 +1,10 @@
 ---
 description: Pin out everything on the Micro CAN Node!
+hidden: true
 icon: square-terminal
 ---
 
-# Node Development Board
+# Node Development Board V1.0
 
 <figure><img src="../.gitbook/assets/FIXED_.png" alt="" width="375"><figcaption><p>Node Development Board with Micro CAN Node fitted</p></figcaption></figure>
 

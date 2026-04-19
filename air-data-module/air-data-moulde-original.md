@@ -1,32 +1,8 @@
----
-description: DroneCAN enabled AUAV absolute and differential pressure sensor
----
+# Air Data Moulde Original
 
-# AUAV Air Data Module
+<figure><img src="../.gitbook/assets/ADM_bundle_edited-Photoroom (1).jpg" alt="" width="375"><figcaption></figcaption></figure>
 
-## Introduction
-
-The Beyond Robotix Air Data Module makes use of differential and absolute pressure sensors to estimate airspeed and altitude. The module works over DroneCAN with a variety of autopilots.
-
-<figure><img src="../.gitbook/assets/Iso-Photoroom.jpg" alt="" width="375"><figcaption></figcaption></figure>
-
-There are 5 variants of the air data module, each with their own maximum speeds:
-
-* L05D -> 45m/s
-* L10D -> 63m/s
-* L30D -> 111m/s
-* L60D -> 149m/s
-* L100D -> 193m/s
-
-It's best to choose the lowest speed variant which your platform will not exceed the maximum speed of.
-
-
-
-It can be purchased here:
-
-{% embed url="https://www.beyondrobotix.com/products/air-data-module" %}
-
-
+The Air Data Module is made up of two layers of PCBs, the lower layer is the Beyond Robotix Micro CAN node and the upper layer is the Air Data Module layer. The two layers interconnect using a high density connector. The Air Data module comes in a PLA Case, with 200mm of hose and a pitot-static tube.&#x20;
 
 ## Pinout
 
@@ -36,7 +12,7 @@ It can be purchased here:
 The CAN ports are common that can be used to daisy chain to other CAN nodes.
 {% endhint %}
 
-The computation on the Air Data Module is performed on the [CAN Node](../can-node-system/micro-node.md). If you would like to terminate the CAN bus at the Air Data Module, a solder jumper labeled `120R` can be jumped.
+The computation on the Air Data Module is performed on the [CAN Node](../can-ecosystem/micro-node.md). If you would like to terminate the CAN bus at the Air Data Module, a solder jumper labeled `120R` can be jumped.
 
 <figure><img src="../.gitbook/assets/Air Data Module Disassembled.jpg" alt=""><figcaption></figcaption></figure>
 
@@ -46,6 +22,10 @@ The computation on the Air Data Module is performed on the [CAN Node](../can-nod
 | ---------------- | ----------------------------------------------------------------- | --------------------------------------------------------------------- |
 | NodeID           | The ID the node will appear as in the CAN bus                     | 1-127                                                                 |
 | Sensor\_Pressure | This is the type of AUAV sensor installed on the Air Data Module. | <p>L05D = 5<br>L10D = 10<br>L30D = 30<br>L60D = 60<br>L100D = 100</p> |
+
+{% hint style="info" %}
+Newer versions are now shipped with AP\_Periph (Ardupilots peripheral firmware). This will have the parameter built into the firmware so it cannot be changed.
+{% endhint %}
 
 ## Firmware
 
@@ -105,4 +85,3 @@ Files to 3D print/edit the included case:
 {% file src="../.gitbook/assets/AUAV DroneCAN Air Data Module.step" %}
 
 Please note: this product is designed to require the case. Without it, the Micro CAN node will need mechanically stabilising through another means.
-
