@@ -10,10 +10,12 @@ We support AP\_Periph based firmware's for our CAN node. The Nodes ship with a g
 ## Default firmware features
 
 * 4 PWMs/GPIOs
-  * PA8 - PWM 1 - GPIO 50
-  * PA9 - PWM 2 - GPIO 51
-  * PA10 - PWM 3 - GPIO 52
-  * PA11 - PWM 4 - GPIO 53
+  * PA0 - PWM 1 - GPIO 50
+  * PA1 - PWM 2 - GPIO 51
+  * PA8 - PWM 3 - GPIO 52
+  * PA9 - PWM 4 - GPIO 53
+  * PA10 - PWM 5 - GPIO 54
+  * PA11 - PWM 6 - GPIO 55
 * Serial UBLOX/NMEA GPS (Serial 3 by default)
 * Barometers
 * Airspeed
@@ -32,10 +34,6 @@ If the AP periph bootloader is present, the .bin file can be used in the usual w
 We've working on merging our hwdef file into Ardupilot repository
 {% endhint %}
 
-{% file src="../.gitbook/assets/AP_Periph_with_bl.hex" %}
-For use with STM Cube Programmer
-{% endfile %}
+{% file src="../.gitbook/assets/AP_periph.bin" %}
 
-{% file src="../.gitbook/assets/AP_Periph (3).bin" %}
-If the AP periph booloader is present on the node, this file can be used to program the firmware through mission planner.
-{% endfile %}
+{% file src="../.gitbook/assets/AP_Periph_with_bl (5).hex" %}
