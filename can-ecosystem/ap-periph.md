@@ -16,7 +16,7 @@ We support AP\_Periph based firmware's for our CAN node. The Nodes ship with a g
   * PA9 - PWM 4 - GPIO 53
   * PA10 - PWM 5 - GPIO 54
   * PA11 - PWM 6 - GPIO 55
-* Serial UBLOX/NMEA GPS (Serial 3 by default)
+* Serial UBLOX/NMEA/SBF GPS (Serial 3 by default)
 * Barometers
 * Airspeed
 * Battery (any, but ADC PA0 voltage and PA1 Current enabled by default)
