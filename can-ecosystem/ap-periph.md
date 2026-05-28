@@ -9,7 +9,7 @@ We support AP\_Periph based firmware's for our CAN node. The Nodes ship with a g
 
 ## Default firmware features
 
-* 4 PWMs/GPIOs
+* 6 PWMs/GPIOs
   * PA0 - PWM 1 - GPIO 50
   * PA1 - PWM 2 - GPIO 51
   * PA8 - PWM 3 - GPIO 52
