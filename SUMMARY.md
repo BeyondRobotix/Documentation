@@ -1,6 +1,9 @@
 # Table of contents
 
 * [Welcome!](README.md)
+* [Heated Pitot](heated-pitot/README.md)
+  * [Parameters](heated-pitot/parameters.md)
+  * [Telemetry](heated-pitot/telemetry.md)
 * [Kahuna](kahuna/README.md)
   * [Quick Start Guide](kahuna/quick-start-guide.md)
   * [Further Configuration](kahuna/further-configuration.md)
