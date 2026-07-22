@@ -1,3 +1,7 @@
+---
+icon: sitemap
+---
+
 # Telemetry
 
 The node publishes its status using the standard DroneCAN `uavcan.equipment.power.BatteryInfo` message at 5H&#x7A;**.** This message is for information only and not required for operation.&#x20;
