@@ -1,7 +1,5 @@
 # Parameters
 
-## Heated Pitot — DroneCAN Parameters
-
 | Parameter        | Type | Default | Min | Max  | Units |
 | ---------------- | ---- | ------- | --- | ---- | ----- |
 | `NODEID`         | INT  | 100     | 1   | 127  | —     |
@@ -22,7 +20,7 @@
 
 ***
 
-### Node / bus identity
+## Node / bus identity
 
 #### `NODEID`
 
@@ -38,7 +36,7 @@ Battery / device identifier reported in the published `BatteryInfo.battery_id` f
 
 ***
 
-### Command interface
+## Command interface
 
 #### `CMD_CHANNEL`
 
@@ -53,7 +51,7 @@ If no actuator command is received for 5 s while the heater is OFF, the node fai
 
 ***
 
-### Temperature control
+## Temperature control
 
 #### `T_TARGET`
 
@@ -77,7 +75,7 @@ Enables fair-weather idling. When `1`, the heater sits idle (in `FAIR_WEATHER`) 
 
 ***
 
-### Power / regulator limits
+## Power / regulator limits
 
 #### `P_MAX`
 
@@ -101,7 +99,7 @@ Soft-start ramp time, in seconds. On entry to active PID control (`STANDARD`), t
 
 ***
 
-### PID gains
+## PID gains
 
 The PID loop maps heater temperature error to a power demand (0…`P_MAX` W).
 
@@ -127,7 +125,7 @@ Derivative gain (×0.01). Parameter value `0` → Kd = 0.00.
 
 ***
 
-### Fault detection
+## Fault detection
 
 #### `CHANGE_LIMIT`
 
