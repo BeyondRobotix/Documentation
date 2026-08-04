@@ -41,7 +41,7 @@ The code we will run through is in examples/thermocouple-mcp9600 which is here:
 
 We’ll need to download a few things to work with the software. We’ve got these setup instructions on our documentation site here:
 
-{% embed url="https://beyond-robotix.gitbook.io/docs/can-node-system/arduino-dronecan" %}
+{% embed url="https://beyond-robotix.gitbook.io/docs/can-ecosystem/arduino-dronecan" %}
 
 We’ll also need to get our hardware setup. You’ll need a DroneCAN compatible flight controller or sniffer. We’ll use a Cube Orange. Then connect your Beyond Robotix CAN node to the flight controller via a CAN cable. Also, connect your STLINK to the debug port on the CAN node. Lastly, ensure the switch next to the debug port (`SW1`) is set to '1'.
 
@@ -165,19 +165,26 @@ if (!mcp.begin(I2C_ADDRESS))
 }
 ```
 
-Another point is we don't use the `void loop()` that Arduino uses normally. Instead we have a `while(true){` running at the end of the `void setup()` function.
+The `void loop()` that Arduino uses normally works as you'd expect, so the code is laid out in the usual way. Sensor setup goes in `void setup()`, and the repeating work goes in `void loop()` with `dronecan.cycle()` and `IWatchdog.reload()` at the bottom of it.
 
 ```cpp
 void setup()
 {
-    # Set up Code
-    
-    while(true){
-        # Looping Code
-        
-    }  
-}  
+    // Set up Code
+}
+
+void loop()
+{
+    // Looping Code
+
+    dronecan.cycle();
+    IWatchdog.reload();
+}
 ```
+
+{% hint style="info" %}
+Older versions of this library couldn't use `loop()` and needed a `while(true)` at the end of `setup()` instead. If you're following an older tutorial or example that does this, it still works - there's no need to rewrite it.
+{% endhint %}
 
 Now, in the example, we've written in some logic which lets you send either a temperature packet or a battery packet depending on some parameters. At the core of it, we send a DroneCAN message like this:
 
@@ -210,7 +217,16 @@ We can create fairly complex features easily : - ) If you use the library and/or
 
 We can debug our programs easily with an STLINK. This is included in the Micro CAN node dev kit. Breakpoint debugging is very useful, being able to see the value of variables in real time as the program runs.&#x20;
 
-1. Select the build environment to be "Micro-Node-No-Bootloader" building with the default environment will result in the program going into maintenance mode and staying in the bootloader
+1. Add a bootloader-less environment to `platformio.ini` and select it. Building with the default environment will result in the program going into maintenance mode and staying in the bootloader.
+
+    ```ini
+    [env:Micro-Node-No-Bootloader]
+    board = MicroNode
+    board_build.ldscript = ldscript-no-bootloader.ld
+    build_flags = -DDISABLE_APP_SETUP
+    ```
+
+    The name matters: environments ending in `-App` trigger the two-stage bootloader upload, so a debug environment must be named something else.
 2. Set a breakpoint where you're interested in seeing the program state
 3. Change to the Debug VS code tab
 4. Start the debug session
@@ -227,22 +243,18 @@ Remember, our CAN node now doesn't have a bootloader active, you won't be able t
 
 ## Folder structure
 
-By default, we have a bunch of folders and files in our project.
+The project itself is deliberately small. The library, the board definitions and the bootloader binary all live in separate repositories now, and PlatformIO downloads them for you on the first build.
 
-* .mypy\_cache -> transient, will be generated once you start interacting with the code. Won't be tracked by git
-* .pio -> transient, contains all the build files. We can grab our .bin file from here if we want to distribute the program
+* .pio -> transient, contains all the build files. We can grab our .bin file from here if we want to distribute the program. The downloaded library ends up in ".pio/libdeps"
 * .vscode -> vscode config files
 * assets -> Just used for our repository for logos etc
-* boards -> contains files which tell Platformio about the board we are using, referenced in "platformio.ini"
-* dronecan -> this one contains all the files needed to generate UAVCAN/DroneCAN message headers. Unless you want to regenerate these or do your own messages, we don't need this.
 * examples -> contains all the code examples that will hopefully help you on how to use the library. Each example contents can be copied to "src/main.cpp" to run them. Bear in mind you may need additional library configuration to run them. This should be in the README of each example folder.
-* include -> there's a README in there explaining how to use it
-* lib -> any arduino libraries you want to manually download and unzip go here. This also contains the core "Arduino DroneCAN lib" files, which can be modified if you want to extend the library functionality. We're open to PRs : ) Also contains DroneCAN message headers and libcanard which does our low level CAN frame management
+* lib -> any arduino libraries you want to manually download and unzip go here. Create it if it isn't there
 * src/main.cpp -> Our core program!
-* test -> See the README in this folder to see how to use it
-* variants -> contains code on board configuration. specifies what pins can be used and how. Also specifies RAM/Flash configurations specific to the board MCU
-* MicroNodeBootloader.bin -> our bootloader binary. "upload\_bootloader\_app.py" uses this file and uploads this and the main program at the same time
-* platformio.ini -> specifies how platformio interacts with the project
+* platformio.ini -> specifies how platformio interacts with the project, including which versions of the library and board definitions to fetch
 
-<figure><img src="../../.gitbook/assets/image (16).png" alt=""><figcaption></figcaption></figure>
+The things that used to live in this project and have moved out:
+
+* the core "Arduino DroneCAN lib" files, the DroneCAN message headers and libcanard are now in [libArduinoDroneCAN](https://github.com/BeyondRobotix/libArduinoDroneCAN). You can still modify these to extend the library - we're open to PRs : )
+* the board definitions, pinmaps, linker scripts and the bootloader binary are now in [br\_platformio\_hwdef](https://github.com/BeyondRobotix/br_platformio_hwdef). This is why there's no "boards", "variants" or "MicroNodeBootloader.bin" in the project any more, and why one upload flashes both the bootloader and your app.
 
