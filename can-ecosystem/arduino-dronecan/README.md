@@ -27,17 +27,7 @@ The same application code builds for all of our CAN nodes. Which board you pick 
 
 The two ports on the H7 boards are fully independent interfaces, not a shared bus brought out twice. Each one is its own DroneCAN node with its own node ID and its own parameter values, so a single board can sit on two separate CAN buses at once - or bridge them, if that's what you want. See [Two CAN ports](#two-can-ports).
 
-The Plain CAN node is the same L431 design as the Micro Node in a standalone form factor, so it shares the `Micro-Node-App` environment - there's nothing to change in `platformio.ini` and no separate board to select. Everything on this page applies to it unchanged.
-
-{% content-ref url="../l431-plain-can-node.md" %}
-[l431-plain-can-node.md](../l431-plain-can-node.md)
-{% endcontent-ref %}
-
-Because it breaks its interfaces out to fixed connectors rather than a board-to-board connector, it's worth knowing which Arduino `Serial` object reaches which port on it:
-
-<table><thead><tr><th width="180">In your code</th><th width="160">MCU pins</th><th>Where it comes out</th></tr></thead><tbody><tr><td><code>Serial</code></td><td>PA2 / PA3</td><td>UART2 on the STLINKV3 debug header - this is the one to use for debug printing</td></tr><tr><td><code>Serial1</code></td><td>PB6 / PB7</td><td>TX1 / RX1 on the 2.54mm header</td></tr><tr><td><code>Serial3</code></td><td>PB10 / PB11</td><td>UART3 on the JST-GH serial connector</td></tr></tbody></table>
-
-The ADC and PWM pins are listed on the Plain node's own page, and are used from your code exactly as shown there - `analogRead(PA0)` and so on.
+The Plain CAN node is the same L431 as the Micro Node in a standalone form factor, so the two share an environment. For each board's connectors, pinouts and interfaces, see its own page in this section.
 
 ## Installation
 
@@ -47,7 +37,7 @@ There are a few ways of working with Arduino Code, we recommend the following st
 2. Install the PlatformIO extension [https://platformio.org/install/ide?install=vscode](https://platformio.org/install/ide?install=vscode)
 3. Download the project [https://github.com/BeyondRobotix/Arduino-DroneCAN/releases](https://github.com/BeyondRobotix/Arduino-DroneCAN/releases)
 4. Select the environment for your board from the PlatformIO status bar
-5. Connect your STLINK to your CAN node. On the Node Development Board, remember to set the switch next to the debug port (`SW1`) to '1'. The Plain CAN node has no such switch - it plugs straight into the STLINKV3 header
+5. Connect your STLINK to your CAN node
 6. Press upload!
 
 
