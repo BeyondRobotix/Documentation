@@ -27,6 +27,10 @@ You could integrate GPS receivers, new airspeed sensors, fuel sensors, gas senso
 * Windows PC is assumed - but other OS’s will apply there might just be some minor adjustments needed
 * [Adafruit MCP9600](https://www.adafruit.com/product/4101) + [Thermocouple](https://www.adafruit.com/product/270)
 
+{% hint style="info" %}
+You can follow this tutorial on the [L431 "Plain" CAN node](../l431-plain-can-node.md) instead. It's the same L431, so it builds with the same `Micro-Node-App` environment and the code is identical - just wire the MCP9600 to its I2C JST-GH connector rather than the development board. Note that the Plain node V1.0 has no I2C pullup resistors on board, so you'll need to add them for the sensor to be found.
+{% endhint %}
+
 
 
 ## Getting started
@@ -43,7 +47,7 @@ We’ll need to download a few things to work with the software. We’ve got the
 
 {% embed url="https://beyond-robotix.gitbook.io/docs/can-ecosystem/arduino-dronecan" %}
 
-We’ll also need to get our hardware setup. You’ll need a DroneCAN compatible flight controller or sniffer. We’ll use a Cube Orange. Then connect your Beyond Robotix CAN node to the flight controller via a CAN cable. Also, connect your STLINK to the debug port on the CAN node. Lastly, ensure the switch next to the debug port (`SW1`) is set to '1'.
+We’ll also need to get our hardware setup. You’ll need a DroneCAN compatible flight controller or sniffer. We’ll use a Cube Orange. Then connect your Beyond Robotix CAN node to the flight controller via a CAN cable. Also, connect your STLINK to the debug port on the CAN node. Lastly, ensure the switch next to the debug port (`SW1`) is set to '1'. If you're using the Plain CAN node there's no switch - the STLINKV3 header is wired straight through.
 
 <figure><img src="../../.gitbook/assets/hardware-Photoroom.jpg" alt="" width="375"><figcaption></figcaption></figure>
 

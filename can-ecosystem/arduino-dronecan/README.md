@@ -23,7 +23,19 @@ Github Repository:
 
 The same application code builds for all of our CAN nodes. Which board you pick in PlatformIO decides the pinmap, the linker script and which CAN driver gets compiled in.
 
-<table><thead><tr><th width="180">Board</th><th width="120">MCU</th><th width="100">Flash</th><th width="100">CAN FD</th><th>PlatformIO environment</th></tr></thead><tbody><tr><td>Micro Node</td><td>STM32L431</td><td>256 KB</td><td>No</td><td><code>Micro-Node-App</code></td></tr><tr><td>MicroNode+</td><td>STM32H723</td><td>1 MB</td><td>Yes</td><td><code>Micro-Node-Plus-App</code></td></tr><tr><td>Core Node</td><td>STM32H743</td><td>2 MB</td><td>Yes</td><td><code>Core-Node-App</code></td></tr></tbody></table>
+<table><thead><tr><th width="180">Board</th><th width="120">MCU</th><th width="100">Flash</th><th width="100">CAN FD</th><th>PlatformIO environment</th></tr></thead><tbody><tr><td>Micro Node</td><td>STM32L431</td><td>256 KB</td><td>No</td><td><code>Micro-Node-App</code></td></tr><tr><td>L431 "Plain" CAN node</td><td>STM32L431</td><td>256 KB</td><td>No</td><td><code>Micro-Node-App</code></td></tr><tr><td>MicroNode+</td><td>STM32H723</td><td>1 MB</td><td>Yes</td><td><code>Micro-Node-Plus-App</code></td></tr><tr><td>Core Node</td><td>STM32H743</td><td>2 MB</td><td>Yes</td><td><code>Core-Node-App</code></td></tr></tbody></table>
+
+The Plain CAN node is the same L431 design as the Micro Node in a standalone form factor, so it shares the `Micro-Node-App` environment - there's nothing to change in `platformio.ini` and no separate board to select. Everything on this page applies to it unchanged.
+
+{% content-ref url="../l431-plain-can-node.md" %}
+[l431-plain-can-node.md](../l431-plain-can-node.md)
+{% endcontent-ref %}
+
+Because it breaks its interfaces out to fixed connectors rather than a board-to-board connector, it's worth knowing which Arduino `Serial` object reaches which port on it:
+
+<table><thead><tr><th width="180">In your code</th><th width="160">MCU pins</th><th>Where it comes out</th></tr></thead><tbody><tr><td><code>Serial</code></td><td>PA2 / PA3</td><td>UART2 on the STLINKV3 debug header - this is the one to use for debug printing</td></tr><tr><td><code>Serial1</code></td><td>PB6 / PB7</td><td>TX1 / RX1 on the 2.54mm header</td></tr><tr><td><code>Serial3</code></td><td>PB10 / PB11</td><td>UART3 on the JST-GH serial connector</td></tr></tbody></table>
+
+The ADC and PWM pins are listed on the Plain node's own page, and are used from your code exactly as shown there - `analogRead(PA0)` and so on.
 
 ## Installation
 
@@ -33,7 +45,7 @@ There are a few ways of working with Arduino Code, we recommend the following st
 2. Install the PlatformIO extension [https://platformio.org/install/ide?install=vscode](https://platformio.org/install/ide?install=vscode)
 3. Download the project [https://github.com/BeyondRobotix/Arduino-DroneCAN/releases](https://github.com/BeyondRobotix/Arduino-DroneCAN/releases)
 4. Select the environment for your board from the PlatformIO status bar
-5. Connect your STLINK to your CAN node
+5. Connect your STLINK to your CAN node. On the Node Development Board, remember to set the switch next to the debug port (`SW1`) to '1'. The Plain CAN node has no such switch - it plugs straight into the STLINKV3 header
 6. Press upload!
 
 
