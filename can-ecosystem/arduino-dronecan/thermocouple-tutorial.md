@@ -219,9 +219,10 @@ We can debug our programs easily with an STLINK. This is included in the Micro C
 
 This works as standard in PlatformIO debugging, with your normal build environment. It previously needed a special flash without the bootloader, but this is no longer an issue.
 
-1. Set a breakpoint where you're interested in seeing the program state
-2. Change to the Debug VS code tab
-3. Start the debug session
+1. You can now use the standard -app environment for your board
+2. Set a breakpoint where you're interested in seeing the program state
+3. Change to the Debug VS code tab
+4. Start the debug session
 
 <figure><img src="../../.gitbook/assets/1.jpg" alt=""><figcaption></figcaption></figure>
 
