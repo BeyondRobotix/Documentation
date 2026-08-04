@@ -15,11 +15,13 @@ The Micro Node Plus steps up from our L431 nodes to an STM32H723. It brings two 
 
 Like the rest of the range it runs [Arduino DroneCAN](arduino-dronecan/), so you write a normal Arduino sketch and get DroneCAN, parameters and firmware update over CAN for free.
 
-<!-- TODO image: board render / photo, front and back -->
-<!-- <figure><img src="../.gitbook/assets/FILENAME.png" alt="" width="375"><figcaption><p>Micro Node Plus</p></figcaption></figure> -->
+{% hint style="danger" %}
+**PLACEHOLDER - image needed:** board photo or render, front and back.
+{% endhint %}
 
-<!-- TODO: store link, once the product page exists -->
-<!-- {% embed url="https://www.beyondrobotix.com/products/..." %} -->
+{% hint style="danger" %}
+**PLACEHOLDER - link needed:** store page embed, once the product is listed.
+{% endhint %}
 
 * STM32H723VGHx processor - 550 MHz Cortex-M7, 1 MB flash
 * **2x independent CAN FD interfaces**, each with its own transceiver and its own JST-GH connector
@@ -43,15 +45,17 @@ Like the rest of the range it runs [Arduino DroneCAN](arduino-dronecan/), so you
 
 ### CAD
 
-<!-- TODO: attach the .step file -->
-<!-- {% file src="../.gitbook/assets/FILENAME.step" %} -->
+{% hint style="danger" %}
+**PLACEHOLDER - file needed:** full CAD including connectors, as a `.step`.
+{% endhint %}
 
 ### Mounting holes & Board dimensions
 
 Mounting holes are M3 (3.2mm diameter cutout).
 
-<!-- TODO image: dimensioned mechanical drawing -->
-<!-- <figure><img src="../.gitbook/assets/FILENAME.png" alt="" width="375"><figcaption></figcaption></figure> -->
+{% hint style="danger" %}
+**PLACEHOLDER - image needed:** dimensioned mechanical drawing, dimensions in mm. Board dimensions and mounting hole spacing are still to be filled in here too.
+{% endhint %}
 
 ## Power
 
@@ -164,7 +168,9 @@ The debug header carries SWD, reset, and a serial console which appears in your 
 1. Connect the node to your ST-LINK
 2. Click upload or debug in VS-Code!
 
-<!-- TODO image: photo of the debug header, matching the style of the Plain node page -->
+{% hint style="danger" %}
+**PLACEHOLDER - image needed:** photo of the debug header with pin 1 marked, as on the Plain node page.
+{% endhint %}
 
 | Pin | Description |
 | --- | ----------- |
