@@ -23,7 +23,9 @@ Github Repository:
 
 The same application code builds for all of our CAN nodes. Which board you pick in PlatformIO decides the pinmap, the linker script and which CAN driver gets compiled in.
 
-<table><thead><tr><th width="180">Board</th><th width="120">MCU</th><th width="100">Flash</th><th width="100">CAN FD</th><th>PlatformIO environment</th></tr></thead><tbody><tr><td>Micro Node</td><td>STM32L431</td><td>256 KB</td><td>No</td><td><code>Micro-Node-App</code></td></tr><tr><td>L431 "Plain" CAN node</td><td>STM32L431</td><td>256 KB</td><td>No</td><td><code>Micro-Node-App</code></td></tr><tr><td>MicroNode+</td><td>STM32H723</td><td>1 MB</td><td>Yes</td><td><code>Micro-Node-Plus-App</code></td></tr><tr><td>Core Node</td><td>STM32H743</td><td>2 MB</td><td>Yes</td><td><code>Core-Node-App</code></td></tr></tbody></table>
+<table><thead><tr><th width="170">Board</th><th width="110">MCU</th><th width="90">Flash</th><th width="90">CAN FD</th><th width="110">CAN ports</th><th>PlatformIO environment</th></tr></thead><tbody><tr><td>Micro Node</td><td>STM32L431</td><td>256 KB</td><td>No</td><td>1</td><td><code>Micro-Node-App</code></td></tr><tr><td>L431 "Plain" CAN node</td><td>STM32L431</td><td>256 KB</td><td>No</td><td>1</td><td><code>Micro-Node-App</code></td></tr><tr><td>MicroNode+</td><td>STM32H723</td><td>1 MB</td><td>Yes</td><td>2</td><td><code>Micro-Node-Plus-App</code></td></tr><tr><td>Core Node</td><td>STM32H743</td><td>2 MB</td><td>Yes</td><td>2</td><td><code>Core-Node-App</code></td></tr></tbody></table>
+
+The two ports on the H7 boards are fully independent interfaces, not a shared bus brought out twice. Each one is its own DroneCAN node with its own node ID and its own parameter values, so a single board can sit on two separate CAN buses at once - or bridge them, if that's what you want. See [Two CAN ports](#two-can-ports).
 
 The Plain CAN node is the same L431 design as the Micro Node in a standalone form factor, so it shares the `Micro-Node-App` environment - there's nothing to change in `platformio.ini` and no separate board to select. Everything on this page applies to it unchanged.
 
