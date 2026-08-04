@@ -217,19 +217,11 @@ We can create fairly complex features easily : - ) If you use the library and/or
 
 We can debug our programs easily with an STLINK. This is included in the Micro CAN node dev kit. Breakpoint debugging is very useful, being able to see the value of variables in real time as the program runs.&#x20;
 
-1. Add a bootloader-less environment to `platformio.ini` and select it. Building with the default environment will result in the program going into maintenance mode and staying in the bootloader.
+This works as standard in PlatformIO debugging, with your normal build environment. It previously needed a special flash without the bootloader, but this is no longer an issue.
 
-    ```ini
-    [env:Micro-Node-No-Bootloader]
-    board = MicroNode
-    board_build.ldscript = ldscript-no-bootloader.ld
-    build_flags = -DDISABLE_APP_SETUP
-    ```
-
-    The name matters: environments ending in `-App` trigger the two-stage bootloader upload, so a debug environment must be named something else.
-2. Set a breakpoint where you're interested in seeing the program state
-3. Change to the Debug VS code tab
-4. Start the debug session
+1. Set a breakpoint where you're interested in seeing the program state
+2. Change to the Debug VS code tab
+3. Start the debug session
 
 <figure><img src="../../.gitbook/assets/1.jpg" alt=""><figcaption></figcaption></figure>
 
@@ -237,7 +229,7 @@ After the program rebuilds, and starts running, the program now stops at where w
 
 <figure><img src="../../.gitbook/assets/image (14).png" alt=""><figcaption></figcaption></figure>
 
-Remember, our CAN node now doesn't have a bootloader active, you won't be able to upload firmware over CAN. Once you've done your development and debugging, switch back to the bootloader environment and you'll be good to go.
+The bootloader stays on the node throughout, so you can keep updating firmware over CAN while you're developing.
 
 
 
