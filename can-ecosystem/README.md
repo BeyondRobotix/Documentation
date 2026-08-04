@@ -26,6 +26,18 @@ The Node Development Board breaks out all the interfaces from the mounted node, 
 
 <figure><img src="../.gitbook/assets/FIXED_.png" alt="" width="375"><figcaption><p>Carrier board with Micro Node Mounted</p></figcaption></figure>
 
+### L431 "Plain" CAN node
+
+The same STM32L431 as the Micro Node, but as a standalone board rather than one that mounts to a carrier. Interfaces come out on JST-GH connectors and a 2.54mm header, and it has the same debug port for developing Arduino DroneCAN applications. Pick this one when you don't need a custom carrier board.
+
+{% embed url="https://www.beyondrobotix.com/products/can-node" %}
+
+<figure><img src="../.gitbook/assets/white-Photoroom(1) (1).png" alt="" width="375"><figcaption><p>L431 "Plain" CAN node</p></figcaption></figure>
+
+{% content-ref url="l431-plain-can-node.md" %}
+[l431-plain-can-node.md](l431-plain-can-node.md)
+{% endcontent-ref %}
+
 ### Arduino DroneCAN
 
 You can integrate your sensor how you like with minimal code and using pre-existing Arduino libraries. Includes bootloader support so your apps can be updated over CAN.
