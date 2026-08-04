@@ -373,6 +373,11 @@ You can set and retrieve parameters easily. parameters get saved to flash so the
 
 #### CAN FD
 
+{% hint style="info" %}
+CANFD support is experimental. So far bench tests have shown 2mpbs functioning, and some success with 4mpbs.
+{% endhint %}
+
+
 The H7 boards (MicroNode+ and Core Node) support CAN FD. Pass a `CanMode` to init() to turn it on:
 
 ```cpp
