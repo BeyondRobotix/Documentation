@@ -16,6 +16,7 @@
   * [Node Development Board V1.1](can-ecosystem/node-development-board-v1.1.md)
   * [Micro Node](can-ecosystem/micro-node.md)
   * [L431 "Plain" CAN node](can-ecosystem/l431-plain-can-node.md)
+  * [Micro Node Plus](can-ecosystem/micro-node-plus.md)
   * [Arduino DroneCAN](can-ecosystem/arduino-dronecan/README.md)
     * [Thermocouple Tutorial](can-ecosystem/arduino-dronecan/thermocouple-tutorial.md)
   * [AP Periph](can-ecosystem/ap-periph.md)

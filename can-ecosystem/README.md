@@ -38,6 +38,16 @@ The same STM32L431 as the Micro Node, but as a standalone board rather than one 
 [l431-plain-can-node.md](l431-plain-can-node.md)
 {% endcontent-ref %}
 
+### Micro Node Plus
+
+Our H7 node. Two fully independent CAN FD interfaces, a lot more processing power than the L431 nodes, and JST-GH connectors for serial, I2C, SPI and PWM following the same conventions as an autopilot.
+
+<!-- TODO image: board render / photo -->
+
+{% content-ref url="micro-node-plus.md" %}
+[micro-node-plus.md](micro-node-plus.md)
+{% endcontent-ref %}
+
 ### Arduino DroneCAN
 
 You can integrate your sensor how you like with minimal code and using pre-existing Arduino libraries. Includes bootloader support so your apps can be updated over CAN.
