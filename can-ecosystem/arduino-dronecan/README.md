@@ -64,19 +64,7 @@ You don't need to flash it separately. The bootloader binary for each board ship
 
 ## Breakpoint debugging
 
-We haven't been able to successfully start breakpoint debugging while a bootloader is on the node. So far.
-
-To debug, add a bootloader-less environment to `platformio.ini`. It differs from an `-App` environment in two ways: the name must not end in `-App` (that suffix is what triggers the two-stage bootloader upload), and it uses the standalone linker script which starts the program at `0x08000000`:
-
-```ini
-[env:Micro-Node-No-Bootloader]
-board = MicroNode
-board_build.ldscript = ldscript-no-bootloader.ld
-build_flags = -DDISABLE_APP_SETUP
-```
-
-Remember, this overwrites the bootloader, so you won't be able to update programs over CAN. Once you've done your debugging sessions, you can then switch back to the `-App` config for app deployment and the bootloader gets restored.
-
+This works as standard in PlatformIO debugging! It previously needed a special flash without the bootloader, but this is no longer an issue.
 
 
 ## Detailed Example
