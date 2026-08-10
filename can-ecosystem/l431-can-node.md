@@ -34,13 +34,13 @@ With its mounting holes & 2.54mm header it can be integrated robustly into your 
 
 ## Specifications
 
-| Item | Detail |
-|---|---|
-| MCU | STM32L431 |
-| Flash | 256 KB total |
-| CAN | 1x CAN1 (Classic CAN, no CAN FD) |
-| Crystal | 8 MHz external oscillator |
-| Dimensions | 18 x 20 mm (see [Mounting holes & Board dimensions](#mounting-holes-and-board-dimensions)) |
+| Item       | Detail                                                                                                     |
+| ---------- | ---------------------------------------------------------------------------------------------------------- |
+| MCU        | STM32L431                                                                                                  |
+| Flash      | 256 KB total                                                                                               |
+| CAN        | 1x CAN1 (Classic CAN, no CAN FD)                                                                           |
+| Crystal    | 8 MHz external oscillator                                                                                  |
+| Dimensions | 18 x 20 mm (see [Mounting holes & Board dimensions](l431-can-node.md#mounting-holes-and-board-dimensions)) |
 
 ## Firmware
 
@@ -60,7 +60,7 @@ Every board ships with a generic AP\_Periph build by default. It requires no cod
 
 #### Default firmware features
 
-* **Servo/PWM output** — 6 channels, see [PWM](#pwm) below
+* **Servo/PWM output** — 6 channels, see [PWM](l431-can-node.md#pwm) below
 * **GPS** — moving-baseline support, Septentrio SBF driver enabled, output on Serial 3 by default
 * **Airspeed (I2C)** — MS4525 sensor as default type
 * **Battery monitor** — analog voltage/current sensing, disabled by default, enable via DroneCAN parameters
@@ -69,54 +69,54 @@ Every board ships with a generic AP\_Periph build by default. It requires no cod
 
 #### Servo / PWM outputs (channels 1–6)
 
-| Pin | Timer | RCOut Channel |
-|---|---|---|
-| PA0 | TIM2\_CH1 | 1 |
-| PA1 | TIM2\_CH2 | 2 |
-| PA8 | TIM1\_CH1 | 3 |
-| PA9 | TIM1\_CH2 | 4 |
-| PA10 | TIM1\_CH3 | 5 |
-| PA11 | TIM1\_CH4 | 6 |
+| Pin  | RCOut Channel (OUTn\_) |
+| ---- | ---------------------- |
+| PA0  | 1                      |
+| PA1  | 2                      |
+| PA8  | 3                      |
+| PA9  | 4                      |
+| PA10 | 5                      |
+| PA11 | 6                      |
 
 Outputs 1–2 are driven by TIM2 (general-purpose timer), outputs 3–6 by TIM1 (advanced timer).
 
-| Parameter | Purpose | Notes |
-|---|---|---|
-| `OUTn_FUNCTION` | Assigns output function to channel *n* (1–6) | `0` = Disabled. See `SRV_Channel::Aux_servo_function_t` for full list (e.g. Motor1, RCIN1, GPIO). |
-| `OUTn_MIN` / `OUTn_MAX` | PWM endpoint range (µs) | Per channel |
-| `OUTn_TRIM` | Trim/neutral PWM (µs) | Per channel |
-| `OUTn_REVERSED` | Reverse output direction | Per channel |
-| `ESC_RATE` | Update rate for ESC/motor outputs | Default 400 Hz |
-| `ESC_PWM_TYPE` | Output protocol (OneShot/DShot/etc.) | Default 0 (normal PWM) |
+| Parameter               | Purpose                                      | Notes                                                                                             |
+| ----------------------- | -------------------------------------------- | ------------------------------------------------------------------------------------------------- |
+| `OUTn_FUNCTION`         | Assigns output function to channel _n_ (1–6) | `0` = Disabled. See `SRV_Channel::Aux_servo_function_t` for full list (e.g. Motor1, RCIN1, GPIO). |
+| `OUTn_MIN` / `OUTn_MAX` | PWM endpoint range (µs)                      | Per channel                                                                                       |
+| `OUTn_TRIM`             | Trim/neutral PWM (µs)                        | Per channel                                                                                       |
+| `OUTn_REVERSED`         | Reverse output direction                     | Per channel                                                                                       |
+| `ESC_RATE`              | Update rate for ESC/motor outputs            | Default 400 Hz                                                                                    |
+| `ESC_PWM_TYPE`          | Output protocol (OneShot/DShot/etc.)         | Default 0 (normal PWM)                                                                            |
 
 Relay/GPIO output can reuse these same pins (GPIO 50–55) when the corresponding `OUTn_FUNCTION` is set to `-1`/GPIO instead of a servo function.
 
 #### Battery monitor
 
-| Parameter | Purpose | Default |
-|---|---|---|
-| `BATT_MONITOR` | Monitor type (`0`=Disabled, `4`=Analog Voltage+Current, etc.) | `0` (disabled) |
-| `BATT_VOLT_PIN` | ADC pin for voltage sense | `5` (maps to PB0) |
-| `BATT_VOLT_MULT` | Voltage divider scale | `21.0` |
-| `BATT_CURR_PIN` | ADC pin for current sense | `6` (maps to PB1) |
-| `BATT_AMP_PERVLT` | Current sensor scale (A/V) | `40.0` |
+| Parameter         | Purpose                                                       | Default           |
+| ----------------- | ------------------------------------------------------------- | ----------------- |
+| `BATT_MONITOR`    | Monitor type (`0`=Disabled, `4`=Analog Voltage+Current, etc.) | `0` (disabled)    |
+| `BATT_VOLT_PIN`   | ADC pin for voltage sense                                     | `5` (maps to PB0) |
+| `BATT_VOLT_MULT`  | Voltage divider scale                                         | `21.0`            |
+| `BATT_CURR_PIN`   | ADC pin for current sense                                     | `6` (maps to PB1) |
+| `BATT_AMP_PERVLT` | Current sensor scale (A/V)                                    | `40.0`            |
 
 Set `BATT_MONITOR` to a nonzero type to enable; the pin/scale defaults above already match the onboard sense resistors/divider, but can be overridden per-install if a different sensor is wired.
 
 #### Airspeed (I2C)
 
-| Parameter | Purpose | Default |
-|---|---|---|
-| `ARSPD_TYPE` | Sensor type | `1` = MS4525 |
-| `ARSPD_BUS` | I2C bus index | Auto-detected on the onboard I2C bus |
+| Parameter    | Purpose       | Default                              |
+| ------------ | ------------- | ------------------------------------ |
+| `ARSPD_TYPE` | Sensor type   | `1` = MS4525                         |
+| `ARSPD_BUS`  | I2C bus index | Auto-detected on the onboard I2C bus |
 
 #### GPS
 
-| Parameter | Purpose | Default |
-|---|---|---|
-| `GPS1_TYPE` | GPS protocol/type | Auto-detect on Serial 3 |
-| `GPS_PORT` | DroneCAN GPS output port index | `2` |
-| `GPS_MB_ONLY_PORT` | Restrict moving-baseline pairing to a specific CAN port | `0` (disabled) |
+| Parameter          | Purpose                                                 | Default                 |
+| ------------------ | ------------------------------------------------------- | ----------------------- |
+| `GPS1_TYPE`        | GPS protocol/type                                       | Auto-detect on Serial 3 |
+| `GPS_PORT`         | DroneCAN GPS output port index                          | `2`                     |
+| `GPS_MB_ONLY_PORT` | Restrict moving-baseline pairing to a specific CAN port | `0` (disabled)          |
 
 Moving-baseline and Septentrio SBF support are compiled in; no extra param is needed to enable the driver itself, only to select the correct `GPS1_TYPE`.
 
@@ -173,7 +173,6 @@ The CAN Node has 1 available I2C interface exposed to a JST-GH port.
 The CAN Node V1.0 has no i2c pullups on board. I2C sensors attached to this interface will need pullups to function.
 {% endhint %}
 
-
 | Pin | Description |
 | --- | ----------- |
 | 1   | 5V          |
@@ -184,7 +183,6 @@ The CAN Node V1.0 has no i2c pullups on board. I2C sensors attached to this inte
 ### Serial
 
 The CAN node has 3 serial interface exposed. UART1 is exposed on the 2.54mm header pins, UART2 is exposed in the ST-LINK Debug header and UART3 is exposed on the JST-GH.
-
 
 | Pin | Description |
 | --- | ----------- |
@@ -229,7 +227,7 @@ When using Arduino DroneCAN, these pins can be accessed in your program using `P
 {% endhint %}
 
 {% hint style="info" %}
-When using AP\_Periph, these channels are configured with the `OUTn_FUNCTION`, `OUTn_MIN`/`OUTn_MAX`, `OUTn_TRIM` and `OUTn_REVERSED` parameters — see [Servo / PWM outputs](#servo--pwm-outputs-channels-1-6) above.
+When using AP\_Periph, these channels are configured with the `OUTn_FUNCTION`, `OUTn_MIN`/`OUTn_MAX`, `OUTn_TRIM` and `OUTn_REVERSED` parameters — see [Servo / PWM outputs](l431-can-node.md#servo--pwm-outputs-channels-1-6) above.
 {% endhint %}
 
 ### ADC
@@ -241,7 +239,7 @@ When using AP\_Periph, these channels are configured with the `OUTn_FUNCTION`, `
 * B1 — ADC pin `16`
 
 {% hint style="info" %}
-In AP\_Periph, A0 (pin `5`) and A1 (pin `6`) are the default `BATT_VOLT_PIN`/`BATT_CURR_PIN` for [Battery monitor](#battery-monitor) above.
+In AP\_Periph, A0 (pin `5`) and A1 (pin `6`) are the default `BATT_VOLT_PIN`/`BATT_CURR_PIN` for [Battery monitor](l431-can-node.md#battery-monitor) above.
 {% endhint %}
 
 These pins can be read in Arduino DroneCAN like:
