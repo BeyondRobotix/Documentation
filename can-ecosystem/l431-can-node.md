@@ -91,6 +91,22 @@ Outputs 1–2 are driven by TIM2 (general-purpose timer), outputs 3–6 by TIM1 
 
 Relay/GPIO output can reuse these same pins (GPIO 50–55) when the corresponding `OUTn_FUNCTION` is set to `-1`/GPIO instead of a servo function.
 
+### ADC
+
+The following pins can be used as ADCs. The channel is what is used to identify the pin in AP\_Periph, for example for the `BATT_VOLT_PIN`&#x20;
+
+| Hardware Pin | ADC Channel |
+| ------------ | ----------- |
+| A0           | `5`         |
+| A1           | `6`         |
+| A4           | `9`         |
+| B0           | `15`        |
+| B1           | `16`        |
+
+{% hint style="danger" %}
+The maximum voltage of the ADC pins is 3.3V.
+{% endhint %}
+
 #### Battery monitor
 
 | Parameter         | Purpose                                                       | Default           |
@@ -180,6 +196,10 @@ The CAN Node V1.0 has no i2c pullups on board. I2C sensors attached to this inte
 | 3   | SDA         |
 | 4   | GND         |
 
+{% hint style="info" %}
+The pins in the I2C JST-GH are common (the same interface) with the pins on the 2.54 mm header pins.
+{% endhint %}
+
 ### Serial
 
 The CAN node has 3 serial interface exposed. UART1 is exposed on the 2.54mm header pins, UART2 is exposed in the ST-LINK Debug header and UART3 is exposed on the JST-GH.
@@ -193,64 +213,23 @@ The CAN node has 3 serial interface exposed. UART1 is exposed on the 2.54mm head
 | 5   | N/C         |
 | 6   | GND         |
 
-## 2.54mm Header
+## 2.54 mm Header
 
-More interfaces can be accessed through the 2.54mm header. Wires could be directly soldered to these pads, or header pins could be added.
+More interfaces can be accessed through the 2.54 mm header. Wires could be directly soldered to these pads, or header pins could be added.
 
 The CAN interface is accessible through this header, as well as power input, allowing the board to be used purely through the header without needing the JST-GH connectors if desired.
 
-Apart from general GPIO described after the image the following is available:
+The following interfaces aer pinned out on the headers:
 
-* 1x CAN interface (C\_L, C\_H)
-* 3v3
-* 5V
-* 2x GND pads
-* TX1/RX1
-* I2C interface (same pins as the JST-GH)
-* 9x GPIO/ADC/PWM
+* CAN interface (C\_L, C\_H)
+* Power (5V, 3v3, 2x GND)
+* UART1 (TX1, RX1)
+* I2C interface (SDA, SCL)
+* 9x GPIO/ADC/PWM&#x20;
+
+How to use the GPIO/ADC/PWM pins depends on the firmware. If you are using the default AP\_Periph - see [#ap\_periph-default-shipped-firmware](l431-can-node.md#ap_periph-default-shipped-firmware "mention"). If you are using Arduino DroneCAN - see [#arduino-dronecan](./#arduino-dronecan "mention")
 
 <figure><img src="../.gitbook/assets/image (22).png" alt=""><figcaption></figcaption></figure>
-
-### PWM
-
-PWMs:
-
-* A0 — `OUT1` in AP\_Periph
-* A1 — `OUT2` in AP\_Periph
-* A8 — `OUT3` in AP\_Periph
-* A9 — `OUT4` in AP\_Periph
-* A10 — `OUT5` in AP\_Periph
-* A11 — `OUT6` in AP\_Periph
-
-{% hint style="info" %}
-When using Arduino DroneCAN, these pins can be accessed in your program using `PA_8` in your code for A8
-{% endhint %}
-
-{% hint style="info" %}
-When using AP\_Periph, these channels are configured with the `OUTn_FUNCTION`, `OUTn_MIN`/`OUTn_MAX`, `OUTn_TRIM` and `OUTn_REVERSED` parameters — see [Servo / PWM outputs](l431-can-node.md#servo--pwm-outputs-channels-1-6) above.
-{% endhint %}
-
-### ADC
-
-* A0 — ADC pin `5`
-* A1 — ADC pin `6`
-* A4 — ADC pin `9`
-* B0 — ADC pin `15`
-* B1 — ADC pin `16`
-
-{% hint style="info" %}
-In AP\_Periph, A0 (pin `5`) and A1 (pin `6`) are the default `BATT_VOLT_PIN`/`BATT_CURR_PIN` for [Battery monitor](l431-can-node.md#battery-monitor) above.
-{% endhint %}
-
-These pins can be read in Arduino DroneCAN like:
-
-```cpp
-analogRead(PA0);
-```
-
-{% hint style="danger" %}
-The maximum voltage of the ADC pins is 3.3V.
-{% endhint %}
 
 ## Programming the board
 
