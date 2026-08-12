@@ -63,6 +63,8 @@ The board takes power from three places: CAN1, CAN2 and USB. Each one goes throu
 
 Everything on the board runs from that shared bus: both CAN transceivers, the 3.3V regulator that supplies the processor, and the switched 5V rail that feeds the peripheral connectors.
 
+<figure><img src="../.gitbook/assets/micro_node_plus_power_architecture.png" alt=""><figcaption><p>Three fused and OR'd inputs onto one 5V bus</p></figcaption></figure>
+
 ### Redundancy
 
 The OR'ing is passive, which is what makes it useful on a vehicle where the node has to stay up:
