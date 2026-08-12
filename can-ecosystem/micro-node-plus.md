@@ -59,12 +59,25 @@ Dimensions in mm:
 
 ## Power
 
-The board can be powered from either CAN connector or from USB. All three inputs are reverse protected and separately fused at 1 A, and are diode OR'd together, so you can safely have more than one connected at once.
+The board takes power from three places: CAN1, CAN2 and USB. Each one goes through its own 1 A fuse and then its own diode onto a single internal 5V bus, so the three are OR'd together rather than switched between - whichever input is highest at the time carries the load. The diodes double as reverse protection on each input.
 
-The 5V supplied to the peripheral connectors (Serial, SPI and PWM) comes through a current limited load switch, which the processor can turn on and off. A short on a peripheral therefore doesn't take the node itself down.
+Everything on the board runs from that shared bus: both CAN transceivers, the 3.3V regulator that supplies the processor, and the switched 5V rail that feeds the peripheral connectors.
+
+### Redundancy
+
+The OR'ing is passive, which is what makes it useful on a vehicle where the node has to stay up:
+
+* **Either CAN connector can power the whole board**, both transceivers included. A node wired to two buses keeps running, on both interfaces, when one bus loses power.
+* **Changeover is instant and needs no firmware.** There is no switching logic to configure, and none to fail - if the input carrying the load disappears, the next highest simply takes over.
+* **A fault on one input can't propagate.** That input's fuse blows on its own, and its diode blocks the fault from back feeding, so a shorted CAN harness can't drag down the other bus or the flight controller's rail.
+* **A second supply can be connected or removed while the node is running**, without disturbing the one already carrying it.
+
+What this isn't is isolation. The two connectors share a ground, and past the diodes they share one bus, so a fault on the bus itself still takes the node down.
 
 {% hint style="info" %}
-The two CAN connectors have their own fuses, so by default 5V does **not** pass between them - a peripheral plugged into one won't be fed from the other. `JP1`, on the underside between the two CAN transceivers, bridges them if you want to daisy chain power through the node.
+The two CAN connectors are separately fused, so by default 5V does **not** pass between them - a peripheral plugged into one won't be fed from the other. `JP1`, on the underside between the two CAN transceivers, bridges them if you want to daisy chain power through the node.
+
+`JP1` joins the two connector pins directly, ahead of both fuses. The node's own supply stays fused either way, but current passing straight through from one connector to the other is not, so size the protection upstream accordingly.
 {% endhint %}
 
 ### Powering from a flight controller on USB
@@ -81,6 +94,28 @@ Either of these fixes it:
 
 This bites most often on the bench, where a flight controller on a USB cable is the natural way to work. On a vehicle with a power module fitted it doesn't arise.
 {% endhint %}
+
+### The 5V peripheral rail
+
+The Serial 1, SPI and PWM connectors aren't fed from the shared bus directly - they come off it through a current limited load switch. If a sensor shorts, the switch limits the current rather than letting it pull the bus down, so the processor keeps running and the node stays on CAN. A failed peripheral doesn't take the node off the bus with it.
+
+The enable line is `PA5`, held high by a pull-up, so the rail is live as soon as the board is powered and firmware doesn't have to switch it on. Drive it low to cut peripheral power:
+
+```cpp
+pinMode(PA5, OUTPUT);
+digitalWrite(PA5, LOW);   // peripheral 5V off
+digitalWrite(PA5, HIGH);  // and back on
+```
+
+That gives you a way to power cycle a hung sensor in flight, without power cycling the vehicle.
+
+{% hint style="info" %}
+The load switch's fault output isn't wired to the processor, so firmware can't be told that the limit has tripped. An overcurrent shows up as the peripheral going quiet, not as a flag you can read.
+{% endhint %}
+
+### Monitoring the input voltage
+
+The 5V bus is brought to `PB1` through a 10k/10k divider, so a reading on `PB1` is half the bus voltage. Reporting that over DroneCAN is a cheap way to catch a supply that is sagging - which, as above, is what a node that powers up but won't transmit looks like.
 
 ## Pinout / Interfaces
 
