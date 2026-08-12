@@ -6,7 +6,7 @@ icon: microchip
 # Micro Node Plus
 
 {% hint style="warning" %}
-This page is a work in progress. The store link and a close up of the debug header are still to be added, and a few details are marked as needing confirmation.
+This page is a work in progress. The store link is still to be added, and a few details are marked as needing confirmation.
 {% endhint %}
 
 ## Overview
@@ -168,9 +168,7 @@ The debug header carries SWD, reset, and a serial console which appears in your 
 1. Connect the node to your ST-LINK
 2. Click upload or debug in VS-Code!
 
-{% hint style="danger" %}
-**PLACEHOLDER - image needed:** close up of the debug header with pin 1 marked, as on the Plain node page. The header itself is visible in the top side photo above, to the left of the processor, marked `DEBUG`.
-{% endhint %}
+The header is shrouded and keyed, so the cable only fits one way round - there is no pin 1 to line up by eye.
 
 | Pin | Description |
 | --- | ----------- |
