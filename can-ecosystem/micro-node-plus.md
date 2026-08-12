@@ -6,7 +6,7 @@ icon: microchip
 # Micro Node Plus
 
 {% hint style="warning" %}
-This page is a work in progress. Photos, mechanical drawings and CAD are still to be added, and a few details are marked as needing confirmation.
+This page is a work in progress. The store link and a close up of the debug header are still to be added, and a few details are marked as needing confirmation.
 {% endhint %}
 
 ## Overview
@@ -15,9 +15,7 @@ The Micro Node Plus steps up from our L431 nodes to an STM32H723. It brings two 
 
 Like the rest of the range it runs [Arduino DroneCAN](arduino-dronecan/), so you write a normal Arduino sketch and get DroneCAN, parameters and firmware update over CAN for free.
 
-{% hint style="danger" %}
-**PLACEHOLDER - image needed:** board photo or render, front and back.
-{% endhint %}
+<figure><img src="../.gitbook/assets/micro-node-plus-cover.png" alt="" width="375"><figcaption></figcaption></figure>
 
 {% hint style="danger" %}
 **PLACEHOLDER - link needed:** store page embed, once the product is listed.
@@ -39,23 +37,25 @@ Like the rest of the range it runs [Arduino DroneCAN](arduino-dronecan/), so you
 * Input voltage monitoring
 * BOOT0 button
 * Power input from either CAN connector or from USB, each individually fused
-* 4x M3 mounting holes
+* 32 x 32mm, with 4x M3 mounting holes on a 25 x 25mm square
+
+<div><figure><img src="../.gitbook/assets/micro-node-plus-top.png" alt="" width="375"><figcaption><p>Top - the two CAN connectors (<code>C1</code>, <code>C2</code>), Serial 1 (<code>S1</code>), Serial 2 + I2C (<code>S2+I2C</code>), the debug header and the BOOT button</p></figcaption></figure> <figure><img src="../.gitbook/assets/micro-node-plus-bottom.png" alt="" width="375"><figcaption><p>Bottom - USB-C, SPI, PWM, the <code>JP1</code> power bridge and the two <code>TERM</code> termination jumpers</p></figcaption></figure></div>
 
 ## Mechanical
 
 ### CAD
 
-{% hint style="danger" %}
-**PLACEHOLDER - file needed:** full CAD including connectors, as a `.step`.
-{% endhint %}
+Full CAD including connectors can be found here:
+
+{% file src="../.gitbook/assets/Micro-Node-Plus.step" %}
 
 ### Mounting holes & Board dimensions
 
-Mounting holes are M3 (3.2mm diameter cutout).
+The board is 32 x 32mm, with the four mounting holes on a 25 x 25mm square. Mounting holes are M3 (3.2mm diameter cutout).
 
-{% hint style="danger" %}
-**PLACEHOLDER - image needed:** dimensioned mechanical drawing, dimensions in mm. Board dimensions and mounting hole spacing are still to be filled in here too.
-{% endhint %}
+Dimensions in mm:
+
+<figure><img src="../.gitbook/assets/micro-node-plus-drawing.png" alt="" width="375"><figcaption></figcaption></figure>
 
 ## Power
 
@@ -64,7 +64,7 @@ The board can be powered from either CAN connector or from USB. All three inputs
 The 5V supplied to the peripheral connectors (Serial, SPI and PWM) comes through a current limited load switch, which the processor can turn on and off. A short on a peripheral therefore doesn't take the node itself down.
 
 {% hint style="info" %}
-The two CAN connectors have their own fuses, so by default 5V does **not** pass between them - a peripheral plugged into one won't be fed from the other. `JP1` bridges them if you want to daisy chain power through the node.
+The two CAN connectors have their own fuses, so by default 5V does **not** pass between them - a peripheral plugged into one won't be fed from the other. `JP1`, on the underside between the two CAN transceivers, bridges them if you want to daisy chain power through the node.
 {% endhint %}
 
 ## Pinout / Interfaces
@@ -73,7 +73,7 @@ The two CAN connectors have their own fuses, so by default 5V does **not** pass 
 
 Two entirely separate CAN FD interfaces, each with its own transceiver and connector. They are not two connectors on one bus - see [two CAN ports](arduino-dronecan/#two-can-ports) for how to use both from one program.
 
-Both connectors share the same pinout:
+Both connectors are on the bottom edge of the top side, marked `C1` and `C2`, and share the same pinout:
 
 | Pin | Description |
 | --- | ----------- |
@@ -82,11 +82,11 @@ Both connectors share the same pinout:
 | 3   | CANL        |
 | 4   | GND         |
 
-Each interface has its own 120 ohm termination resistor, fitted by bridging a solder jumper - `JP3` for CAN1, `JP4` for CAN2. Both are open by default, so terminate only the nodes at the two ends of your bus.
+Each interface has its own 120 ohm termination resistor, fitted by bridging a solder jumper. The jumpers are on the underside of the board, one beside each CAN transceiver, both marked `TERM`. Both are open by default, so terminate only the nodes at the two ends of your bus.
 
 ### Serial 1
 
-Serial with flow control, in the same pinout an autopilot uses for telemetry. Available in your code as `Serial1`.
+Serial with flow control, in the same pinout an autopilot uses for telemetry. Marked `S1` on the board, and available in your code as `Serial1`.
 
 | Pin | Description | Processor pin |
 | --- | ----------- | ------------- |
@@ -99,7 +99,7 @@ Serial with flow control, in the same pinout an autopilot uses for telemetry. Av
 
 ### Serial 2 & I2C
 
-Serial and I2C brought out on one connector, in the same pinout an autopilot uses for GPS - so a GPS + compass module plugs straight in. Available in your code as `Serial2` and `Wire`.
+Serial and I2C brought out on one connector, in the same pinout an autopilot uses for GPS - so a GPS + compass module plugs straight in. Marked `S2+I2C` on the board, and available in your code as `Serial2` and `Wire`.
 
 | Pin | Description | Processor pin |
 | --- | ----------- | ------------- |
@@ -113,12 +113,12 @@ Serial and I2C brought out on one connector, in the same pinout an autopilot use
 I2C pull-up resistors are fitted on the board, so I2C sensors work without adding your own.
 
 {% hint style="info" %}
-Pin 1 of this connector is 5V by default. `JP2` switches it to 3.3V if your peripheral needs that instead.
+Pin 1 of this connector is 5V by default. `JP2`, on the top side just below the connector, switches it to 3.3V if your peripheral needs that instead.
 {% endhint %}
 
 ### SPI
 
-Two chip selects, two data ready inputs, plus sync and reset lines. Available in your code as `SPI`, with the control lines as named pins.
+Two chip selects, two data ready inputs, plus sync and reset lines. On the underside of the board, and available in your code as `SPI`, with the control lines as named pins.
 
 | Pin | Description | Processor pin | In your code |
 | --- | ----------- | ------------- | ------------ |
@@ -138,7 +138,7 @@ The chip select, data ready, sync and reset lines are plain GPIO - drive or read
 
 ### PWM
 
-8 PWM channels on one connector.
+8 PWM channels on one connector, on the underside of the board opposite the SPI connector.
 
 | Pin | Description | Processor pin | In your code |
 | --- | ----------- | ------------- | ------------ |
@@ -169,7 +169,7 @@ The debug header carries SWD, reset, and a serial console which appears in your 
 2. Click upload or debug in VS-Code!
 
 {% hint style="danger" %}
-**PLACEHOLDER - image needed:** photo of the debug header with pin 1 marked, as on the Plain node page.
+**PLACEHOLDER - image needed:** close up of the debug header with pin 1 marked, as on the Plain node page. The header itself is visible in the top side photo above, to the left of the processor, marked `DEBUG`.
 {% endhint %}
 
 | Pin | Description |
