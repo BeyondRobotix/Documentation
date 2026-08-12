@@ -67,6 +67,21 @@ The 5V supplied to the peripheral connectors (Serial, SPI and PWM) comes through
 The two CAN connectors have their own fuses, so by default 5V does **not** pass between them - a peripheral plugged into one won't be fed from the other. `JP1`, on the underside between the two CAN transceivers, bridges them if you want to daisy chain power through the node.
 {% endhint %}
 
+### Powering from a flight controller on USB
+
+{% hint style="warning" %}
+**A flight controller running on USB alone may not power the node well enough to transmit CAN frames.**
+
+Each CAN input passes through a protection diode, which drops the incoming voltage. A flight controller powered only over USB already puts out a reduced 5V on its CAN connectors, and after our diode the rail can end up below what the CAN transceivers need to drive the bus. The node powers up and runs, so it looks fine, but frames don't go out and it never appears on the bus.
+
+Either of these fixes it:
+
+* Plug USB into the Micro Node Plus as well, so the node has its own supply
+* Power the flight controller properly, through `POWER1` or `POWER2`, which brings the CAN rail back up
+
+This bites most often on the bench, where a flight controller on a USB cable is the natural way to work. On a vehicle with a power module fitted it doesn't arise.
+{% endhint %}
+
 ## Pinout / Interfaces
 
 ### CAN
@@ -74,6 +89,8 @@ The two CAN connectors have their own fuses, so by default 5V does **not** pass 
 Two entirely separate CAN FD interfaces, each with its own transceiver and connector. They are not two connectors on one bus - see [two CAN ports](arduino-dronecan/#two-can-ports) for how to use both from one program.
 
 Both connectors are on the bottom edge of the top side, marked `C1` and `C2`, and share the same pinout:
+
+If the node runs but never appears on the bus, check how the other end is powered - see [powering from a flight controller on USB](#powering-from-a-flight-controller-on-usb).
 
 | Pin | Description |
 | --- | ----------- |
