@@ -28,7 +28,7 @@ You could integrate GPS receivers, new airspeed sensors, fuel sensors, gas senso
 * [Adafruit MCP9600](https://www.adafruit.com/product/4101) + [Thermocouple](https://www.adafruit.com/product/270)
 
 {% hint style="info" %}
-You can follow this tutorial on the [L431 "Plain" CAN node](../l431-plain-can-node.md) instead - it builds with the same environment and the code is identical. Check its page for where to wire the MCP9600.
+You can follow this tutorial on the [CAN Node](../l431-can-node.md) instead - it builds with the same environment and the code is identical. Check its page for where to wire the MCP9600.
 {% endhint %}
 
 
