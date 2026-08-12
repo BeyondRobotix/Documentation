@@ -74,8 +74,6 @@ The OR'ing is passive, which is what makes it useful on a vehicle where the node
 * **A fault on one input can't propagate.** That input's fuse blows on its own, and its diode blocks the fault from back feeding, so a shorted CAN harness can't drag down the other bus or the flight controller's rail.
 * **A second supply can be connected or removed while the node is running**, without disturbing the one already carrying it.
 
-What this isn't is isolation. The two connectors share a ground, and past the diodes they share one bus, so a fault on the bus itself still takes the node down.
-
 {% hint style="info" %}
 The two CAN connectors are separately fused, so by default 5V does **not** pass between them - a peripheral plugged into one won't be fed from the other. `JP1`, on the underside between the two CAN transceivers, bridges them if you want to daisy chain power through the node.
 
