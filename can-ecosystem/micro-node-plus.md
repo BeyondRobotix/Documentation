@@ -33,7 +33,7 @@ Like the rest of the range it runs [Arduino DroneCAN](arduino-dronecan/), so you
   * 1x SPI, with two chip selects and two data ready lines
   * 1x PWM, 8 channels
 * On-board I2C pull-up resistors
-* 5V peripheral rail is current limited, and can be switched off in software
+* 5V peripheral rail is current limited to about 540 mA, and can be switched off in software
 * Input voltage monitoring
 * BOOT0 button
 * Power input from either CAN connector or from USB, each individually fused
@@ -97,7 +97,11 @@ This bites most often on the bench, where a flight controller on a USB cable is 
 
 ### The 5V peripheral rail
 
-The Serial 1, SPI and PWM connectors aren't fed from the shared bus directly - they come off it through a current limited load switch. If a sensor shorts, the switch limits the current rather than letting it pull the bus down, so the processor keeps running and the node stays on CAN. A failed peripheral doesn't take the node off the bus with it.
+The peripheral connectors - Serial 1, Serial 2 + I2C, SPI and PWM - aren't fed from the shared bus directly. They come off it through a current limited load switch. If a sensor shorts, the switch limits the current rather than letting it pull the bus down, so the processor keeps running and the node stays on CAN. A failed peripheral doesn't take the node off the bus with it.
+
+**The limit is about 540 mA**, shared across all four connectors - so a GPS on Serial 2 + I2C and a servo rail on PWM are drawing from the same allowance. That sits inside the 1 A input fuse, with the node's own consumption to fit alongside it, so a peripheral taking its full share won't cost you the input. Anything hungrier than the rail can supply wants its own power, not the node's.
+
+Note that `JP2` takes Serial 2 + I2C pin 1 off this rail: in the 3.3V position that pin is fed from the 3.3V regulator that also supplies the processor, so it is neither switched by `PA5` nor covered by the 540 mA limit.
 
 The enable line is `PA5`, held high by a pull-up, so the rail is live as soon as the board is powered and firmware doesn't have to switch it on. Drive it low to cut peripheral power:
 
@@ -165,7 +169,7 @@ Serial and I2C brought out on one connector, in the same pinout an autopilot use
 I2C pull-up resistors are fitted on the board, so I2C sensors work without adding your own.
 
 {% hint style="info" %}
-Pin 1 of this connector is 5V by default. `JP2`, on the top side just below the connector, switches it to 3.3V if your peripheral needs that instead.
+Pin 1 of this connector is 5V by default, from the switched [peripheral rail](#the-5v-peripheral-rail). `JP2`, on the top side just below the connector, switches it to 3.3V if your peripheral needs that instead - which also takes it off that rail, onto the processor's own 3.3V regulator.
 {% endhint %}
 
 ### SPI
