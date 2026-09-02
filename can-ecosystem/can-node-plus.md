@@ -3,7 +3,7 @@ description: Our H7 CAN node, with two independent CAN FD interfaces
 icon: microchip
 ---
 
-# Micro Node Plus
+# CAN Node Plus
 
 {% hint style="warning" %}
 This page is a work in progress. The store link is still to be added, and a few details are marked as needing confirmation.
@@ -11,11 +11,11 @@ This page is a work in progress. The store link is still to be added, and a few 
 
 ## Overview
 
-The Micro Node Plus steps up from our L431 nodes to an STM32H723. It brings two fully independent CAN FD interfaces, considerably more processing power, and a set of JST-GH connectors following the same conventions as an autopilot, so standard peripherals plug straight in.
+The CAN Node Plus steps up from our L431 nodes to an STM32H723. It brings two fully independent CAN FD interfaces, considerably more processing power, and a set of JST-GH connectors following the same conventions as an autopilot, so standard peripherals plug straight in.
 
 Like the rest of the range it runs [Arduino DroneCAN](arduino-dronecan/), so you write a normal Arduino sketch and get DroneCAN, parameters and firmware update over CAN for free.
 
-<figure><img src="../.gitbook/assets/micro-node-plus-cover.png" alt="" width="375"><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/can-node-plus-cover.png" alt="" width="375"><figcaption></figcaption></figure>
 
 {% hint style="danger" %}
 **PLACEHOLDER - link needed:** store page embed, once the product is listed.
@@ -39,7 +39,7 @@ Like the rest of the range it runs [Arduino DroneCAN](arduino-dronecan/), so you
 * Power input from either CAN connector or from USB, each individually fused
 * 32 x 32mm, with 4x M3 mounting holes on a 25 x 25mm square
 
-<div><figure><img src="../.gitbook/assets/micro-node-plus-top.png" alt="" width="375"><figcaption><p>Top - the two CAN connectors (<code>C1</code>, <code>C2</code>), Serial 1 (<code>S1</code>), Serial 2 + I2C (<code>S2+I2C</code>), the debug header and the BOOT button</p></figcaption></figure> <figure><img src="../.gitbook/assets/micro-node-plus-bottom.png" alt="" width="375"><figcaption><p>Bottom - USB-C, SPI, PWM, the <code>JP1</code> power bridge and the two <code>TERM</code> termination jumpers</p></figcaption></figure></div>
+<div><figure><img src="../.gitbook/assets/can-node-plus-top.png" alt="" width="375"><figcaption><p>Top - the two CAN connectors (<code>C1</code>, <code>C2</code>), Serial 1 (<code>S1</code>), Serial 2 + I2C (<code>S2+I2C</code>), the debug header and the BOOT button</p></figcaption></figure> <figure><img src="../.gitbook/assets/can-node-plus-bottom.png" alt="" width="375"><figcaption><p>Bottom - USB-C, SPI, PWM, the <code>JP1</code> power bridge and the two <code>TERM</code> termination jumpers</p></figcaption></figure></div>
 
 ## Mechanical
 
@@ -47,7 +47,7 @@ Like the rest of the range it runs [Arduino DroneCAN](arduino-dronecan/), so you
 
 Full CAD including connectors can be found here:
 
-{% file src="../.gitbook/assets/Micro-Node-Plus.step" %}
+{% file src="../.gitbook/assets/CAN-Node-Plus.step" %}
 
 ### Mounting holes & Board dimensions
 
@@ -55,7 +55,7 @@ The board is 32 x 32mm, with the four mounting holes on a 25 x 25mm square. Moun
 
 Dimensions in mm:
 
-<figure><img src="../.gitbook/assets/micro-node-plus-drawing.png" alt="" width="375"><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/can-node-plus-drawing.png" alt="" width="375"><figcaption></figcaption></figure>
 
 ## Power
 
@@ -63,7 +63,7 @@ The board takes power from three places: CAN1, CAN2 and USB. Each one goes throu
 
 Everything on the board runs from that shared bus: both CAN transceivers, the 3.3V regulator that supplies the processor, and the switched 5V rail that feeds the peripheral connectors.
 
-<figure><img src="../.gitbook/assets/micro_node_plus_power_architecture.png" alt=""><figcaption><p>Three fused and OR'd inputs onto one 5V bus</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/can_node_plus_power_architecture.png" alt=""><figcaption><p>Three fused and OR'd inputs onto one 5V bus</p></figcaption></figure>
 
 ### Redundancy
 
@@ -89,7 +89,7 @@ Each CAN input passes through a protection diode, which drops the incoming volta
 
 Either of these fixes it:
 
-* Plug USB into the Micro Node Plus as well, so the node has its own supply
+* Plug USB into the CAN Node Plus as well, so the node has its own supply
 * Power the flight controller properly, through `POWER1` or `POWER2`, which brings the CAN rail back up
 
 This bites most often on the bench, where a flight controller on a USB cable is the natural way to work. On a vehicle with a power module fitted it doesn't arise.
@@ -253,7 +253,7 @@ There is a BOOT0 button on the board. Holding it while resetting the node starts
 
 ## Using it with Arduino DroneCAN
 
-Build for the Micro Node Plus by selecting the `Micro-Node-Plus-App` environment in PlatformIO. Everything else works the same as on the rest of the range, with two additions this board is capable of: CAN FD, and running both CAN interfaces at once.
+Build for the CAN Node Plus by selecting the `Micro-Node-Plus-App` environment in PlatformIO. Everything else works the same as on the rest of the range, with two additions this board is capable of: CAN FD, and running both CAN interfaces at once.
 
 {% content-ref url="arduino-dronecan/" %}
 [arduino-dronecan](arduino-dronecan/)

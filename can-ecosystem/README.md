@@ -38,7 +38,7 @@ The same STM32L431 as the Micro Node, but as a standalone board rather than one 
 [l431-can-node.md](l431-can-node.md)
 {% endcontent-ref %}
 
-### Micro Node Plus
+### CAN Node Plus
 
 Our H7 node. Two fully independent CAN FD interfaces, a lot more processing power than the L431 nodes, and JST-GH connectors for serial, I2C, SPI and PWM following the same conventions as an autopilot.
 
@@ -46,10 +46,10 @@ Our H7 node. Two fully independent CAN FD interfaces, a lot more processing powe
 **PLACEHOLDER - link needed:** store page embed, to match the sections above.
 {% endhint %}
 
-<figure><img src="../.gitbook/assets/micro-node-plus-cover.png" alt="" width="375"><figcaption><p>Micro Node Plus</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/can-node-plus-cover.png" alt="" width="375"><figcaption><p>CAN Node Plus</p></figcaption></figure>
 
-{% content-ref url="micro-node-plus.md" %}
-[micro-node-plus.md](micro-node-plus.md)
+{% content-ref url="can-node-plus.md" %}
+[can-node-plus.md](can-node-plus.md)
 {% endcontent-ref %}
 
 ### Arduino DroneCAN
