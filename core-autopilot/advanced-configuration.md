@@ -10,7 +10,7 @@ icon: gear
 
 The BR Core is a compact STM32H743-based autopilot designed for integration into custom UAV platforms. It is built around a three-layer stack — processor, power, and connector — with the default connector layer providing a set of JST-GH style breakouts. Custom connector layers can be designed to re-route the same signals to any layout.
 
-All digital I/O passes through SN74LVC8T245 level-shifting buffers on the power layer. CAN and Ethernet differential pairs are direct pass-throughs (no level shifting). PWM outputs are selectable between 3.3 V and 5 V via a software-controlled GPIO (see [PWM voltage selection](https://claude.ai/chat/a183858b-86e7-4d4d-930d-f98c6d60eebc#pwm-voltage-selection)).
+All digital I/O passes through SN74LVC8T245 level-shifting buffers on the power layer. CAN and Ethernet differential pairs are direct pass-throughs (no level shifting). PWM outputs are selectable between 3.3 V and 5 V via a software-controlled GPIO (see [PWM voltage selection](#pwm-voltage-selection)).
 
 ***
 
@@ -40,7 +40,7 @@ ArduPilot parameter: `SERIAL1_PROTOCOL`
 
 Default protocol: MAVLink 2\
 ArduPilot parameter: `SERIAL2_PROTOCOL`\
-Power rail: Telem 5 V (current-limited, see [Power](https://claude.ai/chat/a183858b-86e7-4d4d-930d-f98c6d60eebc#power))
+Power rail: Telem 5 V (current-limited, see [Power](#power))
 
 | Pin | Signal     | Direction | Voltage |
 | --- | ---------- | --------- | ------- |
