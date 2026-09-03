@@ -25,6 +25,4 @@
   * [Air Data Module Mini](air-data-module/air-data-module-mini.md)
   * [Air Data Moulde Original](air-data-module/air-data-moulde-original.md)
 * [RM3100 DroneCAN Compass](rm3100-dronecan-compass.md)
-* [Core Autopilot](core-autopilot/README.md)
-  * [Advanced Configuration](core-autopilot/advanced-configuration.md)
 * [Engineering Change Notice](engineering-change-notice.md)
