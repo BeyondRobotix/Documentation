@@ -1,6 +1,6 @@
 # Table of contents
 
-* [Welcome!](README.md)
+* [Beyond Robotix Documentation](README.md)
 * [Heated Pitot](heated-pitot/README.md)
   * [Parameters](heated-pitot/parameters.md)
   * [Telemetry](heated-pitot/telemetry.md)

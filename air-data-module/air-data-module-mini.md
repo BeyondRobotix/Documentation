@@ -19,17 +19,17 @@ The Air Data Module Mini is an all in one board that reads airspeed and barometr
 
 ## Pinout
 
-The main connector on the board is a JST-GH with the Pixhawk standard CAN pinout.&#x20;
+The main connector on the board is a JST-GH with the Pixhawk standard CAN pinout.
 
 <table><thead><tr><th width="316" align="right">Pin</th><th>Function</th><th data-hidden>Notes</th></tr></thead><tbody><tr><td align="right">1</td><td>5V</td><td>Recommended: 4.5 - 6V</td></tr><tr><td align="right">2</td><td>CAN H</td><td></td></tr><tr><td align="right">3</td><td>CAN L</td><td></td></tr><tr><td align="right">4</td><td>GND</td><td></td></tr></tbody></table>
 
-<figure><img src="../.gitbook/assets/JST (1).png" alt="" width="375"><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/JST.png" alt="" width="375"><figcaption></figcaption></figure>
 
 ## Extra Pins
 
 <figure><img src="../.gitbook/assets/Pads.png" alt="" width="375"><figcaption></figcaption></figure>
 
-The series of pads on the bottom can be used for other peripheral activities.&#x20;
+The series of pads on the bottom can be used for other peripheral activities.
 
 * 5V - Direct 5V from the JST-GH after reverse polarity protection
 * 3V3 - The 3.3V rail used by the STM32 and the AUAV sensor. You can use it but the peak supply is 500 mA.
@@ -46,13 +46,11 @@ The series of pads on the bottom can be used for other peripheral activities.&#x
 
 The circle pads are used for programming.
 
-## Mechanical&#x20;
+## Mechanical
 
 A mechanical drawing of the Air Data Module Mini along with a step file. The pitot-static tube CAD can be found [here](https://grabcad.com/library/pitot-tube-5).
 
 <figure><img src="../.gitbook/assets/MechanicalDrawingSnap.png" alt="" width="328"><figcaption></figcaption></figure>
-
-
 
 {% file src="../.gitbook/assets/Mechanical Drawing.pdf" %}
 
@@ -60,7 +58,7 @@ A mechanical drawing of the Air Data Module Mini along with a step file. The pit
 
 ## Firmware
 
-Below are the binaries that can be used to flash the Air Data Module Mini. You can upload the firmware in Mission Planner or DroneCAN GUI.&#x20;
+Below are the binaries that can be used to flash the Air Data Module Mini. You can upload the firmware in Mission Planner or DroneCAN GUI.
 
 {% hint style="danger" %}
 Make sure you put the correct firmware on your Air Data Module Mini - Check your AUAV Sensor to see which version you need. No error will show if you upload the wrong firmware, but your airspeed reading will be incorrect.

@@ -1,8 +1,8 @@
 # Air Data Moulde Original
 
-<figure><img src="../.gitbook/assets/ADM_bundle_edited-Photoroom (1).jpg" alt="" width="375"><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/ADM_bundle_edited-Photoroom.jpg" alt="" width="375"><figcaption></figcaption></figure>
 
-The Air Data Module is made up of two layers of PCBs, the lower layer is the Beyond Robotix Micro CAN node and the upper layer is the Air Data Module layer. The two layers interconnect using a high density connector. The Air Data module comes in a PLA Case, with 200mm of hose and a pitot-static tube.&#x20;
+The Air Data Module is made up of two layers of PCBs, the lower layer is the Beyond Robotix Micro CAN node and the upper layer is the Air Data Module layer. The two layers interconnect using a high density connector. The Air Data module comes in a PLA Case, with 200mm of hose and a pitot-static tube.
 
 ## Pinout
 
@@ -36,7 +36,7 @@ Our air data module runs on custom firmware which can be found here, including t
 To update to the latest firmware, there are two methods you can use:
 
 * Mission Planner
-* DroneCAN GUI&#x20;
+* DroneCAN GUI
 
 ### Updating: Mission Planner
 
@@ -58,7 +58,7 @@ You are now on the latest version of the firmware!
 
 ## Mechanical
 
-Images of hole spacing and overall dimensions are provided below. Additionally, the case STL files can&#x20;
+Images of hole spacing and overall dimensions are provided below. Additionally, the case STL files can
 
 ### Case Specifications
 
@@ -74,9 +74,9 @@ Files to 3D print/edit the included case:
 
 {% file src="../.gitbook/assets/BR AUAV ADM Base.3mf" %}
 
-{% file src="../.gitbook/assets/BR AUAV ADM Lid.step" %}
+{% file src="../.gitbook/assets/BR ADM AUAV Lid.step" %}
 
-{% file src="../.gitbook/assets/BR AUAV ADM Base.step" %}
+{% file src="../.gitbook/assets/BR ADM AUAV Base.step" %}
 
 ### PCB Specifications
 

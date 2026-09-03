@@ -6,7 +6,7 @@ icon: microchip
 
 ## Pinouts
 
-The connector to the autopilot is a 6-pin JST-GH connector. The pinouts on the Kahuna are inline with the pixhawk standard, hence an unmodified 6-pin JST-GH can be connected directly to any pixhawk standard autopilot. The TX and RX have been swapped appropriately on the Kahuna for a UART connection.&#x20;
+The connector to the autopilot is a 6-pin JST-GH connector. The pinouts on the Kahuna are inline with the pixhawk standard, hence an unmodified 6-pin JST-GH can be connected directly to any pixhawk standard autopilot. The TX and RX have been swapped appropriately on the Kahuna for a UART connection.
 
 The antenna connector is a U.Fl connector (Also known as IPEX). You can connect an antenna directly to the board or use a U.Fl to SMA adaptor to connect to a wider range of antennas.
 
@@ -48,8 +48,6 @@ The table below outlines the meaning of the status light indications.
 | Current Continuous | 20 mA             |
 | Current Peak       | 250 mA            |
 
-
-
 <figure><img src="../.gitbook/assets/EngineeringDrawingV1.2.png" alt=""><figcaption><p>Physical Dimensions of the Kahuna</p></figcaption></figure>
 
 {% file src="../.gitbook/assets/KahunaV1.2 (2).step" %}
@@ -60,7 +58,7 @@ CAD file for the Kahuna
 
 <figure><img src="../.gitbook/assets/Case Image CAD.png" alt=""><figcaption><p>Render of Case</p></figcaption></figure>
 
-<figure><img src="../.gitbook/assets/Case (2).JPG" alt=""><figcaption><p>Kahuna in Case</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/Case.JPG" alt=""><figcaption><p>Kahuna in Case</p></figcaption></figure>
 
 Files are available to download and print here:
 
