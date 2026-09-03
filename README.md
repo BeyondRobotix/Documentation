@@ -1,11 +1,5 @@
 # Beyond Robotix Documentation
 
-Beyond Robotix develops DroneCAN hardware and UAV telemetry products.
-
-<figure><img src=".gitbook/assets/LogoPurpleBack V3.png" alt="" width="375"><figcaption></figcaption></figure>
-
-
-
 ### Products
 
 Build and operate connected UAV systems with these products:
