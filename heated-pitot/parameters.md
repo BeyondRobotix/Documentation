@@ -4,23 +4,20 @@ icon: wrench
 
 # Parameters
 
-| Parameter        | Type | Default | Min | Max  | Units |
-| ---------------- | ---- | ------- | --- | ---- | ----- |
-| `NODEID`         | INT  | 100     | 1   | 127  | —     |
-| `DEVICE_ID`      | INT  | 0       | 0   | 127  | —     |
-| `T_THRESHOLD`    | INT  | 10      | 0   | 40   | °C    |
-| `EN_FAIRWEATHER` | BOOL | 0       | 0   | 1    | —     |
-| `P_MAX`          | INT  | 70      | 0   | 70   | W     |
-| `CMD_CHANNEL`    | INT  | 10      | 0   | 100  | —     |
-| `KP`             | INT  | 100     | 0   | 1000 | ×0.01 |
-| `KI`             | INT  | 50      | 0   | 1000 | ×0.01 |
-| `KD`             | INT  | 0       | 0   | 1000 | ×0.01 |
-| `T_TARGET`       | INT  | 60      | 40  | 80   | °C    |
-| `CHANGE_LIMIT`   | INT  | 10      | 0   | 100  | °C/s  |
-| `RAMP_S`         | INT  | 5       | 0   | 30   | s     |
-| `MIN_POWER`      | INT  | 2       | 0   | 10   | W     |
-| `ASP_GATE`       | INT  | 15      | 0   | 100  | m/s   |
-| `FAULT_S`        | INT  | 60      | 10  | 600  | s     |
+| Parameter        | Type | Default | Min | Max  | Units    |
+| ---------------- | ---- | ------- | --- | ---- | -------- |
+| `NODEID`         | INT  | 100     | 1   | 127  | —        |
+| `DEVICE_ID`      | INT  | 0       | 0   | 127  | —        |
+| `T_THRESHOLD`    | INT  | 10      | 0   | 40   | °C       |
+| `EN_FAIRWEATHER` | BOOL | 0       | 0   | 1    | —        |
+| `P_MAX`          | INT  | 70      | 0   | 70   | W        |
+| `CMD_CHANNEL`    | INT  | 10      | 0   | 100  | —        |
+| `T_TARGET`       | INT  | 60      | 40  | 80   | °C       |
+| `ASP_GATE`       | INT  | 15      | 0   | 100  | m/s      |
+| `FAULT_S`        | INT  | 60      | 10  | 600  | s        |
+| `TELEM_EN`       | BOOL | 1       | 0   | 1    | —        |
+| `R_HEATER`       | INT  | 235     | 50  | 1000 | ×0.01 Ω  |
+| `SELFTEST`       | BOOL | 0       | 0   | 1    | —        |
 
 ***
 
@@ -89,53 +86,9 @@ Maximum heater power, in watts. This caps the upper limit of the PID output and 
 
 > **Note:** input voltage below \~12 V reduces the regulator's achievable maximum output regardless of this setting; the node emits a `Vin < 12V` warning when that happens.
 
-#### `MIN_POWER`
-
-Low-power cutoff, in watts. When the PID demand falls below this value the heater is switched fully off, avoiding the regulator's \~5 W minimum-output floor from overshooting the target at low demand. Hysteresis re-enables the heater once demand rises back above `2 × MIN_POWER`. Set to `0` to disable the cutoff.
-
-* Default: `2` W · Range: `0`–`10` W
-
-#### `RAMP_S`
-
-Soft-start ramp time, in seconds. On entry to active PID control (`STANDARD`), the PID output upper limit is ramped from 0 up to `P_MAX` over this many seconds, so the heater eases into full power rather than slamming on. Set to `0` for no ramp.
-
-* Default: `5` s · Range: `0`–`30` s
-
-***
-
-## PID gains
-
-The PID loop maps heater temperature error to a power demand (0…`P_MAX` W).
-
-> **Scaling:** `KP`, `KI`, and `KD` are transmitted as integers scaled by ×100. The firmware multiplies by 0.01 on receipt, so a parameter value of `30` means an actual gain of **0.30**. To set Kp = 0.30, write `KP = 30`.
-
-#### `KP`
-
-Proportional gain (×0.01). Parameter value `100` → Kp = 1.00.
-
-* Default: `100` (Kp = 1.00) · Range: `0`–`1000` (Kp = 0.00…10.00)
-
-#### `KI`
-
-Integral gain (×0.01). Parameter value `50` → Ki = 0.50.
-
-* Default: `50` (Ki = 0.50) · Range: `0`–`1000` (Ki = 0.00…10.00)
-
-#### `KD`
-
-Derivative gain (×0.01). Parameter value `0` → Kd = 0.00.
-
-* Default: `0` (Kd = 0.00) · Range: `0`–`1000` (Kd = 0.00…10.00)
-
 ***
 
 ## Fault detection
-
-#### `CHANGE_LIMIT`
-
-Thermocouple rate-of-change fault threshold, in °C per second. If the measured temperature jumps faster than this between cycles, the reading is treated as implausible and the heater trips into `FAULT` (typically indicates a disconnected or shorting thermocouple).
-
-* Default: `10` °C/s · Range: `0`–`100` °C/s
 
 #### `ASP_GATE`
 
@@ -148,3 +101,43 @@ Airspeed gate for thermal-runaway detection, in m/s. The "probe fell off / therm
 Fault cooldown, in seconds. After a thermal-runaway fault, the node holds in `FAULT` for this long before retrying. (Sensor-blip faults such as NaN readings or over-fast changes retry immediately; only thermal-runaway uses this cooldown.)
 
 * Default: `60` s · Range: `10`–`600` s
+
+***
+
+## Telemetry
+
+#### `R_HEATER`
+
+Resistance of the heating element, in hundredths of an ohm (so `206` means 2.06 Ω). The node has no current sensor: it measures the heater output voltage on its ADC divider and infers current and power from this value via Ohm's law (`I = V / R`, `P = V × I`). Only the `current` field of the telemetry message and the serial debug output depend on it — **heater control is unaffected**, so mis-setting it cannot make the heater behave badly.
+
+The default is the measured element resistance. If you meter your own element cold, enter that value instead. Expect the inferred current to read a few percent high when the element is hot, since the parameter is a fixed resistance and the element's resistance rises with temperature.
+
+* Default: `235` (2.35 Ω) · Range: `50`–`1000` (0.5–10.0 Ω)
+
+#### `TELEM_EN`
+
+Enables publishing of the node's `uavcan.equipment.power.BatteryInfo` status message. When `1`, the node broadcasts heater telemetry (heater voltage, inferred current, temperature, heater state, output power) every heater cycle. When `0`, the message is suppressed — useful to reduce bus traffic when the telemetry isn't needed. Disabling telemetry has no effect on heater control.
+
+* Default: `1` (enabled) · Range: `0`–`1`
+
+***
+
+## Diagnostics
+
+#### `SELFTEST`
+
+Write `1` to run the hardware self-test, which drives the trim DAC and the enable line through a short sequence (\~4.5 s, under \~15 J into the element) and checks the regulator responds and tracks. The node writes the parameter back to `0` when the run ends, including when it refuses to start.
+
+Track progress with the `SELFTEST_ACTIVE` bit in `NodeStatus`'s `vendor_specific_status_code`, not by polling this parameter. The result appears in the same field: `SELFTEST_PASSED` for a clean run, or the specific failure bits.
+
+The test refuses to run unless the heater supply is present, the temperature is below target and finite, airspeed is under 1 m/s, and the node is not in `HARD_FAULT`. A refused or aborted run reports `SELFTEST_INCONCLUSIVE`.
+
+* Default: `0` · Range: `0`–`1`
+
+***
+
+## Quick reference: worked examples
+
+* **Regulate to 65 °C, never exceed 40 W** → `T_TARGET = 65`, `P_MAX = 40`.
+* **Always heat (no fair-weather idling)** → `EN_FAIRWEATHER = 0`.
+* **Listen to autopilot actuator channel 3** → `CMD_CHANNEL = 3`.
