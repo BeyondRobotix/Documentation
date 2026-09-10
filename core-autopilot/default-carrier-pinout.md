@@ -3,7 +3,7 @@
 The carrier board pinouts follow Pixhawk standard pinouts! 
 
 
-#### RC (Serial1 - USART1)
+## RC (Serial1 - USART1)
 
 6-pin, JST-GH 1.25 mm pitch.
 
@@ -21,7 +21,7 @@ ArduPilot parameter: `SERIAL1_PROTOCOL`
 
 ***
 
-#### TELEM1 (Serial2 - USART2)
+## TELEM1 (Serial2 - USART2)
 
 6-pin, JST-GH 1.25 mm pitch.
 
@@ -42,7 +42,7 @@ Power rail: Telem 5 V (current-limited, see [Power](#power))
 
 ***
 
-#### SERIAL3 (USART3)
+## SERIAL3 (USART3)
 
 6-pin, JST-GH 1.25 mm pitch.
 
@@ -60,7 +60,7 @@ ArduPilot parameter: `SERIAL3_PROTOCOL`
 
 ***
 
-#### SERIAL4 / SERIAL5 / SERIAL6
+## SERIAL4 / SERIAL5 / SERIAL6
 
 6-pin, JST-GH 1.25 mm pitch.
 
@@ -83,7 +83,7 @@ Default protocol: None (user-defined)
 
 ***
 
-#### GPS (Serial7 - UART7)
+## GPS (Serial7 - UART7)
 
 6-pin, JST-GH 1.25 mm pitch.
 
@@ -104,7 +104,7 @@ This port also carries I²C for an external compass.
 
 ***
 
-#### CAN1 / CAN2
+## CAN1 / CAN2
 
 4-pin, JST-GH 1.25 mm pitch. Termination: 120 Ω installed on the connector layer.
 
@@ -119,7 +119,7 @@ This port also carries I²C for an external compass.
 
 ***
 
-#### I²C
+## I²C
 
 4-pin, JST-GH 1.25 mm pitch.
 
@@ -134,7 +134,7 @@ This port also carries I²C for an external compass.
 
 ***
 
-#### ETH (Ethernet)
+## ETH (Ethernet)
 
 4-pin, JST-GH 1.25 mm pitch.
 
@@ -147,7 +147,7 @@ This port also carries I²C for an external compass.
 
 ***
 
-#### USB
+## USB
 
 4-pin, JST-GH 1.25 mm pitch.
 
@@ -161,7 +161,7 @@ This port also carries I²C for an external compass.
 
 ***
 
-#### DEBUG
+## DEBUG
 
 14-pin, 1.27 mm pitch (FTSH-107-01-L-DV-K, compatible with standard ARM SWD cables).
 
@@ -186,7 +186,7 @@ This port also carries I²C for an external compass.
 
 ***
 
-#### PWR1 / PWR2
+## PWR1 / PWR2
 
 6-pin, Molex CLIK-Mate 2.0 mm pitch power input connectors. PWR1 and PWR2 provide independent redundant power paths - either connector alone is sufficient to power the board.
 
@@ -203,7 +203,7 @@ This port also carries I²C for an external compass.
 
 ***
 
-#### PWM outputs
+## PWM outputs
 
 The 16 PWM outputs are available on a 3×16 row of 2.54 mm pitch through-holes at the bottom edge of the board, with three rows labelled **PWM**, **Spwr** (servo power), and **GND**.
 
