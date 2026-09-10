@@ -1,7 +1,7 @@
 
 # Core Autopilot
 
-<figure style="text-align: center"><img src="../.gitbook/assets/core-autopilot-board.jpg" alt="" width="375"><figcaption></figcaption></figure>
+<figure style="text-align: center"><img src="../.gitbook/assets/core-autopilot-board.png" alt="" width="375"><figcaption></figcaption></figure>
 
 # Stack Architecture
 
