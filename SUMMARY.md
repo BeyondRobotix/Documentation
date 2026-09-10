@@ -26,5 +26,7 @@
   * [Air Data Moulde Original](air-data-module/air-data-moulde-original.md)
 * [RM3100 DroneCAN Compass](rm3100-dronecan-compass.md)
 * [Core Autopilot](core-autopilot/README.md)
+  * [Core Pinout](core-autopilot/core-pinout.md)
+  * [Default Carrier Pinout](core-autopilot/default-carrier-pinout.md)
   * [Advanced Configuration](core-autopilot/advanced-configuration.md)
 * [Engineering Change Notice](engineering-change-notice.md)
