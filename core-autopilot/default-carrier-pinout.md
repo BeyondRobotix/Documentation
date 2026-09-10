@@ -3,7 +3,7 @@
 The carrier board pinouts follow Pixhawk standard pinouts! 
 
 
-## RC (Serial1 - USART1)
+## RC (Serial1)
 
 6-pin, JST-GH 1.25 mm pitch.
 
@@ -21,7 +21,7 @@ ArduPilot parameter: `SERIAL1_PROTOCOL`
 
 ***
 
-## TELEM1 (Serial2 - USART2)
+## TELEM1 (Serial2)
 
 6-pin, JST-GH 1.25 mm pitch.
 
@@ -42,7 +42,7 @@ Power rail: Telem 5 V (current-limited, see [Power](#power))
 
 ***
 
-## SERIAL3 (USART3)
+## SERIAL3
 
 6-pin, JST-GH 1.25 mm pitch.
 
@@ -66,12 +66,6 @@ ArduPilot parameter: `SERIAL3_PROTOCOL`
 
 Default protocol: None (user-defined)
 
-| ArduPilot port | MCU peripheral | Parameter          |
-| -------------- | --------------- | ------------------ |
-| Serial4        | UART4           | `SERIAL4_PROTOCOL` |
-| Serial5        | UART5           | `SERIAL5_PROTOCOL` |
-| Serial6        | USART6          | `SERIAL6_PROTOCOL` |
-
 | Pin | Signal         | Direction | Voltage |
 | --- | -------------- | --------- | ------- |
 | 1   | Peripherals 5V | Output    | 5 V     |
@@ -83,7 +77,7 @@ Default protocol: None (user-defined)
 
 ***
 
-## GPS (Serial7 - UART7)
+## GPS (Serial7)
 
 6-pin, JST-GH 1.25 mm pitch.
 
@@ -94,8 +88,8 @@ This port also carries I²C for an external compass.
 | Pin | Signal         | Direction | Voltage |
 | --- | -------------- | --------- | ------- |
 | 1   | Peripherals 5V | Output    | 5 V     |
-| 2   | TX7            | Output    | 3.3 V   |
-| 3   | RX7            | Input     | 3.3 V   |
+| 2   | TX            | Output    | 3.3 V   |
+| 3   | RX            | Input     | 3.3 V   |
 | 4   | SCL            | Output    | 3.3 V   |
 | 5   | SDA            | Output    | 3.3 V   |
 | 6   | GND            | -         | 0 V     |
@@ -111,8 +105,8 @@ This port also carries I²C for an external compass.
 | Pin | Signal         | Direction | Voltage |
 | --- | -------------- | --------- | ------- |
 | 1   | Peripherals 5V | Output    | 5 V     |
-| 2   | CAN*n*\_H      | Bidir     | -       |
-| 3   | CAN*n*\_L      | Bidir     | -       |
+| 2   | CAN_H          | Bidir     | -       |
+| 3   | CAN_L          | Bidir     | -       |
 | 4   | GND            | -         | 0 V     |
 
 > *n* is 1 or 2 depending on the connector. CAN1 maps to FDCAN1 (`CAN_P1_DRIVER = 1`), CAN2 maps to FDCAN2 (`CAN_P2_DRIVER = 1`).
@@ -215,21 +209,21 @@ The 16 PWM outputs are available on a 3×16 row of 2.54 mm pitch through-holes a
 
 PWM outputs 1–8 are the **MAIN** outputs and pass through the level shifter (voltage-selectable). PWM outputs 9–16 are **AUX** outputs and are direct 3.3 V GPIO.
 
-| Output | Timer channel | ArduPilot function |
-| ------ | ------------- | ------------------ |
-| PWM1   | TIM1\_CH1     | MAIN 1             |
-| PWM2   | TIM1\_CH2     | MAIN 2             |
-| PWM3   | TIM1\_CH3     | MAIN 3             |
-| PWM4   | TIM1\_CH4     | MAIN 4             |
-| PWM5   | TIM2\_CH1     | MAIN 5             |
-| PWM6   | TIM2\_CH3     | MAIN 6             |
-| PWM7   | TIM2\_CH4     | MAIN 7             |
-| PWM8   | TIM3\_CH1     | MAIN 8             |
-| PWM9   | TIM3\_CH2     | AUX 1              |
-| PWM10  | TIM3\_CH3     | AUX 2              |
-| PWM11  | TIM3\_CH4     | AUX 3              |
-| PWM12  | TIM4\_CH2     | AUX 4              |
-| PWM13  | TIM4\_CH3     | AUX 5              |
-| PWM14  | TIM4\_CH4     | AUX 6              |
-| PWM15  | TIM5\_CH1     | AUX 7              |
-| PWM16  | TIM5\_CH2     | AUX 8              |
+| Output | ArduPilot function |
+| ------ | ------------------ |
+| PWM1   | MAIN 1             |
+| PWM2   | MAIN 2             |
+| PWM3   | MAIN 3             |
+| PWM4   | MAIN 4             |
+| PWM5   | MAIN 5             |
+| PWM6   | MAIN 6             |
+| PWM7   | MAIN 7             |
+| PWM8   | MAIN 8             |
+| PWM9   | AUX 1              |
+| PWM10  | AUX 2              |
+| PWM11  | AUX 3              |
+| PWM12  | AUX 4              |
+| PWM13  | AUX 5              |
+| PWM14  | AUX 6              |
+| PWM15  | AUX 7              |
+| PWM16  | AUX 8              |
