@@ -6,7 +6,7 @@ icon: square-terminal
 
 # Node Development Board V1.0
 
-<figure><img src="../.gitbook/assets/FIXED_.png" alt="" width="375"><figcaption><p>Node Development Board with Micro CAN Node fitted</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/node-development-board-v1.0-with-micro-node.png" alt="" width="375"><figcaption><p>Node Development Board with Micro CAN Node fitted</p></figcaption></figure>
 
 This is a carrier board for the Micro CAN node.&#x20;
 
@@ -27,15 +27,15 @@ The CAD file for the node development carrier can be found below, along with the
 
 The holes on the carrier board are M3.
 
-{% file src="../.gitbook/assets/Node Development Carrier V1.0 .step" %}
+{% file src="../.gitbook/assets/node-development-board-v1.0.step" %}
 
-<figure><img src="../.gitbook/assets/image (12).png" alt="" width="563"><figcaption><p>Carrier integration dimensions</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/node-development-board-v1.0-carrier-dimensions.png" alt="" width="563"><figcaption><p>Carrier integration dimensions</p></figcaption></figure>
 
 ## Available interfaces
 
 The Dev board interfaces follow Pixhawk pin out standards or RC common convention where applicable. Please double check the interface pin outs for your application. We've included a lot of information on the back of the board which should help with most questions.
 
-<figure><img src="../.gitbook/assets/image (3) (1).png" alt=""><figcaption><p>Rear of the CAN Node development board</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/node-development-board-v1.0-rear.png" alt=""><figcaption><p>Rear of the CAN Node development board</p></figcaption></figure>
 
 ### CAN
 
@@ -52,7 +52,7 @@ The Micro Node has 1 available CAN interface, which is pinned out to 2 JST-GH CA
 
 The Micro Node has 1 available I2C interface,  which has been pinned out to a single JST-GH port. This has selectable 3.3V out or 5V out depending on how JP2 is set. By default, JP2 is set to 5V out.
 
-<figure><img src="../.gitbook/assets/JP2 Solder Jumper.png" alt="" width="188"><figcaption><p>Swapping 5V to 3.3V</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/node-development-board-jp2-solder-jumper.png" alt="" width="188"><figcaption><p>Swapping 5V to 3.3V</p></figcaption></figure>
 
 To set to 3.3V out:
 
@@ -115,7 +115,7 @@ The Micro Node has 8 GPIO pins available. These have been pinned out into a stan
 When using Arduino DroneCAN, these pins can be accessed in your program using `PA_8` in your code for PA8
 {% endhint %}
 
-<figure><img src="../.gitbook/assets/image (3).png" alt=""><figcaption><p>GPIO and ADC headers</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/node-development-board-v1.0-gpio-adc-headers.png" alt=""><figcaption><p>GPIO and ADC headers</p></figcaption></figure>
 
 ### ADC
 
@@ -152,7 +152,7 @@ The "STLINKV3" header is directly compatible with the [STLINK-V3MINIE](https://w
 
 The pins on the ST-LINK header could also be used with normal Arduino jumpers so a STLINKV2, or another SWD based debugger could be used. The pins are as follows:
 
-<figure><img src="../.gitbook/assets/image (5).png" alt=""><figcaption><p>STLINK Header</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/can-node-stlink-header-pinout.png" alt=""><figcaption><p>STLINK Header</p></figcaption></figure>
 
 <table><thead><tr><th width="246">Pin Number</th><th>Description</th></tr></thead><tbody><tr><td>1</td><td><mark style="color:orange;">NC</mark></td></tr><tr><td>2</td><td><mark style="color:orange;">NC</mark></td></tr><tr><td>3</td><td>5V in</td></tr><tr><td>4</td><td>SWD</td></tr><tr><td>5</td><td><mark style="color:blue;">GND</mark></td></tr><tr><td>6</td><td>SWC</td></tr><tr><td>7</td><td><mark style="color:blue;">GND</mark></td></tr><tr><td>8</td><td><mark style="color:orange;">NC</mark></td></tr><tr><td>9</td><td><mark style="color:orange;">NC</mark></td></tr><tr><td>10</td><td><mark style="color:blue;">GND</mark></td></tr><tr><td>11</td><td><mark style="color:orange;">NC</mark></td></tr><tr><td>12</td><td><mark style="color:orange;">NC</mark></td></tr><tr><td>13</td><td>UART2_TX</td></tr><tr><td>14</td><td>UART2_RX</td></tr></tbody></table>
 

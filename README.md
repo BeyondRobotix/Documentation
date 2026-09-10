@@ -4,5 +4,5 @@ This is the documentation site for [https://www.beyondrobotix.com/](https://www.
 
 
 
-<figure><img src=".gitbook/assets/LogoPurpleBack V3.png" alt="" width="375"><figcaption></figcaption></figure>
+<figure><img src=".gitbook/assets/beyondrobotix-logo.png" alt="" width="375"><figcaption></figcaption></figure>
 

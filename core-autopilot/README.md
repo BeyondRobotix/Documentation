@@ -1,7 +1,7 @@
 
 # Core Autopilot
 
-<figure style="text-align: center"><img src="../.gitbook/assets/IMG_0800.jpg" alt="" width="375"><figcaption></figcaption></figure>
+<figure style="text-align: center"><img src="../.gitbook/assets/core-autopilot-board.jpg" alt="" width="375"><figcaption></figcaption></figure>
 
 # Stack Architecture
 
@@ -79,7 +79,7 @@ BR Core accepts four independent 5 V sources. All four connect through the conne
 
 You do not need to select between them. Any combination can be connected at once, and the board draws from whichever are live.
 
-<figure><img src="../.gitbook/assets/br_core_power_inputs_to_5v_bus.svg" alt="" width="680"><figcaption><p>Four power sources filtered, fused and monitored before merging onto the 5V bus</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/br-core-power-inputs-to-5v-bus.svg" alt="" width="680"><figcaption><p>Four power sources filtered, fused and monitored before merging onto the 5V bus</p></figcaption></figure>
 
 ### Redundancy behaviour
 
@@ -91,7 +91,7 @@ Nominal 5.15 V supplies are expected; the window is deliberately tight, so a sup
 
 Two power rails leave the board through the connector layer: TELEM and Peripherals.
 
-<figure><img src="../.gitbook/assets/br_core_5v_bus_distribution.svg" alt="" width="680"><figcaption><p>5V bus distribution on the power layer</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/br-core-5v-bus-distribution.svg" alt="" width="680"><figcaption><p>5V bus distribution on the power layer</p></figcaption></figure>
 
 High-current servo and actuator power should be supplied externally, not drawn from the board.
 

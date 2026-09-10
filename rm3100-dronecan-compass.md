@@ -4,7 +4,7 @@
 
 The RM3100 DroneCAN Compass Node uses the [PNI RM3100 Magnotometer](https://www.pnisensor.com/rm3100/) and sends compass messages over DroneCAN back to a flight controller. The node works on a regular DroneCAN bus and is completely plug and play.
 
-<figure><img src=".gitbook/assets/Mag Node RM3100 V0.2 Render2.png" alt=""><figcaption></figcaption></figure>
+<figure><img src=".gitbook/assets/rm3100-compass-render.png" alt=""><figcaption></figcaption></figure>
 
 ### Features <a href="#pinout" id="pinout"></a>
 
@@ -51,6 +51,6 @@ For advanced compass configurations on ardupilot, refer to these [instructions](
 
 Mechanical design of the PCB and STEP file.
 
-<figure><img src=".gitbook/assets/Mechanical.png.png" alt=""><figcaption></figcaption></figure>
+<figure><img src=".gitbook/assets/rm3100-compass-mechanical-drawing.png" alt=""><figcaption></figcaption></figure>
 
-{% file src=".gitbook/assets/Mag Node RM3100.step" %}
+{% file src=".gitbook/assets/rm3100-compass.step" %}
