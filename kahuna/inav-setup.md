@@ -11,7 +11,7 @@ INAV supports MAVLink in a limited capacity, meaning the Kahuna can be used to v
 
 Connect the Kahuna to a free UART on your autopilot.
 
-<figure><img src="../.gitbook/assets/INAV_Kahuna_FC.jpg" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/kahuna-inav-uart-connection.jpg" alt=""><figcaption></figcaption></figure>
 
 #### Step 2:
 
@@ -21,7 +21,7 @@ Plug your flight controller into your PC via USB, open INAV Configurator and pre
 
 Navigate to the Ports tab on the left of the screen and select MAVLink from the telemetry dropdown of the UART you are using (in this case UART4). Set the baud rate to the baud rate of the Kahuna (Default: 57600). Press Save and Reboot to apply the change.
 
-<figure><img src="../.gitbook/assets/INAV_configurator.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/kahuna-inav-configurator-ports.png" alt=""><figcaption></figcaption></figure>
 
 #### Step 4:
 
@@ -34,7 +34,7 @@ _Password: beyondrobotix_\
 
 Open Mission Planner, select UDP from the dropdown in the top right corner and press connect. A dialog will open asking you to choose a port, 14550 will already be entered which is the default for the Kahuna. If you have not changed this on the Kahuna setup page you can press OK.
 
-<figure><img src="../.gitbook/assets/MissionPlanner.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/kahuna-inav-mission-planner-connect.png" alt=""><figcaption></figcaption></figure>
 
 You should now see live updates in the artificial horizon when you move your flight controller.
 

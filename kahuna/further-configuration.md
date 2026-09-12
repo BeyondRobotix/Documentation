@@ -12,13 +12,13 @@ To update or find any settings, you are able to do this using any browser by goi
 
 Use Access Point Mode (the default setting) to allow the Kahuna to create its own Wi-Fi network. This enables any Wi-Fi enabled device with ground control software, like Mission Planner or QGroundControl to connect to your autopilot.
 
-<figure><img src="../.gitbook/assets/SingleUASSystem.png" alt="" width="563"><figcaption><p>Kahuna is the host of a Wifi network between GCS and UAV. </p></figcaption></figure>
+<figure><img src="../.gitbook/assets/kahuna-access-point-mode.png" alt="" width="563"><figcaption><p>Kahuna is the host of a Wifi network between GCS and UAV. </p></figcaption></figure>
 
 ## Station Mode
 
 Station mode enables Kahuna to connect to an already established Wi-Fi Access Point. This is useful to communicate with multiple Kahuna units at a time.&#x20;
 
-<div align="center" data-full-width="false"><figure><img src="../.gitbook/assets/MultiUASSystem.png" alt="" width="375"><figcaption><p>Simple Multi UAV System on one network. Each vehicle requires a Kahuna connected to their respective autopilots. These are connected the the router, which forwards all traffic to the GCS computer. The router is the host in Station Mode.</p></figcaption></figure></div>
+<div align="center" data-full-width="false"><figure><img src="../.gitbook/assets/kahuna-station-mode-multi-uav.png" alt="" width="375"><figcaption><p>Simple Multi UAV System on one network. Each vehicle requires a Kahuna connected to their respective autopilots. These are connected the the router, which forwards all traffic to the GCS computer. The router is the host in Station Mode.</p></figcaption></figure></div>
 
 {% hint style="warning" %}
 When a Kahuna is powered on in Station Mode and cannot find a Router (or another access point) within 1 minute, it will switch to Access Point Mode. Rebooting will reset it to Station Mode.&#x20;
@@ -28,7 +28,7 @@ When a Kahuna is powered on in Station Mode and cannot find a Router (or another
 
 Set up each Kahuna with the settings below. Station SSID and Station Password are the settings used to connect to the router.
 
-<figure><img src="../.gitbook/assets/KahunaStationModeSetUpSimple (2).png" alt="" width="375"><figcaption><p>Kahuna Web GUI for basic set up for station mode</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/kahuna-station-mode-setup.png" alt="" width="375"><figcaption><p>Kahuna Web GUI for basic set up for station mode</p></figcaption></figure>
 
 After saving these parameters, reboot the Kahuna and it will search for the router. If the Kahuna and GCS computer are both connected to the router, the Autopilot will show up in Mission Planner or QGroundControl.
 

@@ -7,7 +7,7 @@ icon: square-code
 
 
 
-<figure><img src="../.gitbook/assets/node-front.png" alt="" width="375"><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/node-development-board-v1.1-front.png" alt="" width="375"><figcaption></figcaption></figure>
 
 
 
@@ -30,15 +30,15 @@ The CAD file for the node development carrier can be found below, along with the
 
 The holes on the carrier board are M3.
 
-{% file src="../.gitbook/assets/V1.1 Beyond Robotix CAN Dev board.step" %}
+{% file src="../.gitbook/assets/node-development-board-v1.1.step" %}
 
-<figure><img src="../.gitbook/assets/dims.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/node-development-board-v1.1-dimensions.png" alt=""><figcaption></figcaption></figure>
 
 ## Available interfaces
 
 The Dev board interfaces follow Pixhawk pin out standards or RC common convention where applicable. Please double check the interface pin outs for your application. We've included a lot of information on the back of the board which should help with most questions.
 
-<figure><img src="../.gitbook/assets/no-node-back.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/node-development-board-v1.1-back.png" alt=""><figcaption></figcaption></figure>
 
 ### CAN
 
@@ -55,7 +55,7 @@ The Micro Node has 1 available CAN interface, which is pinned out to 2 JST-GH CA
 
 The Micro Node has 1 available I2C interface,  which has been pinned out to a single JST-GH port. This has selectable 3.3V out or 5V out depending on how JP2 is set. By default, JP2 is set to 5V out.
 
-<figure><img src="../.gitbook/assets/JP2 Solder Jumper.png" alt="" width="188"><figcaption><p>Swapping 5V to 3.3V</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/node-development-board-jp2-solder-jumper.png" alt="" width="188"><figcaption><p>Swapping 5V to 3.3V</p></figcaption></figure>
 
 To set to 3.3V out:
 
@@ -159,7 +159,7 @@ The "STLINKV3" header is directly compatible with the [STLINK-V3MINIE](https://w
 
 The pins on the ST-LINK header could also be used with normal Arduino jumpers so a STLINKV2, or another SWD based debugger could be used. The pins are as follows:
 
-<figure><img src="../.gitbook/assets/image (5).png" alt=""><figcaption><p>STLINK Header</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/can-node-stlink-header-pinout.png" alt=""><figcaption><p>STLINK Header</p></figcaption></figure>
 
 <table><thead><tr><th width="246">Pin Number</th><th>Description</th></tr></thead><tbody><tr><td>1</td><td><mark style="color:orange;">NC</mark></td></tr><tr><td>2</td><td><mark style="color:orange;">NC</mark></td></tr><tr><td>3</td><td>5V in</td></tr><tr><td>4</td><td>SWD</td></tr><tr><td>5</td><td><mark style="color:blue;">GND</mark></td></tr><tr><td>6</td><td>SWC</td></tr><tr><td>7</td><td><mark style="color:blue;">GND</mark></td></tr><tr><td>8</td><td><mark style="color:orange;">NC</mark></td></tr><tr><td>9</td><td><mark style="color:orange;">NC</mark></td></tr><tr><td>10</td><td><mark style="color:blue;">GND</mark></td></tr><tr><td>11</td><td><mark style="color:orange;">NC</mark></td></tr><tr><td>12</td><td><mark style="color:orange;">NC</mark></td></tr><tr><td>13</td><td>UART2_TX</td></tr><tr><td>14</td><td>UART2_RX</td></tr></tbody></table>
 

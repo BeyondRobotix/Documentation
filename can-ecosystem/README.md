@@ -16,7 +16,7 @@ The Micro Node carriers the STM32L431 chip with all required hardware. It has a 
 
 {% embed url="https://www.beyondrobotix.com/products/micro-can-node" %}
 
-<figure><img src="../.gitbook/assets/Front and Back.png" alt="" width="375"><figcaption><p>Micro Node </p></figcaption></figure>
+<figure><img src="../.gitbook/assets/micro-node-front-and-back.png" alt="" width="375"><figcaption><p>Micro Node </p></figcaption></figure>
 
 ### Node Development Board
 
@@ -24,7 +24,7 @@ The Node Development Board breaks out all the interfaces from the mounted node, 
 
 {% embed url="https://www.beyondrobotix.com/products/micro-can-node-development-bundle" %}
 
-<figure><img src="../.gitbook/assets/FIXED_.png" alt="" width="375"><figcaption><p>Carrier board with Micro Node Mounted</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/node-development-board-v1.0-with-micro-node.png" alt="" width="375"><figcaption><p>Carrier board with Micro Node Mounted</p></figcaption></figure>
 
 ### CAN Node
 
@@ -32,7 +32,7 @@ The same STM32L431 as the Micro Node, but as a standalone board rather than one 
 
 {% embed url="https://www.beyondrobotix.com/products/can-node" %}
 
-<figure><img src="../.gitbook/assets/white-Photoroom(1) (1).png" alt="" width="375"><figcaption><p>CAN Node</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/l431-can-node-front.png" alt="" width="375"><figcaption><p>CAN Node</p></figcaption></figure>
 
 {% content-ref url="l431-can-node.md" %}
 [l431-can-node.md](l431-can-node.md)

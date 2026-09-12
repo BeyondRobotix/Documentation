@@ -11,7 +11,7 @@ icon: building-columns
 
 Do you want to integrate a sensor into Ardupilot or PX4? Arduino DroneCAN and the Beyond Robotix CAN node let you do that very quickly. This tutorial runs through integrating the Adafruit MCP9600 thermocouple sensor, resulting in us being able to send temperature messages over DroneCAN. The big advantage of using the Arduino framework is access to Arduino libraries. Almost always, there are libraries available for the sensor you want to use. This saves development time. The Arduino framework is also simple to work with, and the Platformio + VS code platform allows easy development from small to complicated projects.
 
-<figure><img src="../../.gitbook/assets/title photo-Photoroom (1).jpg" alt="" width="375"><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/thermocouple-tutorial-title-photo.jpg" alt="" width="375"><figcaption></figcaption></figure>
 
 Using custom firmware allows lots of options, such as integrating a battery monitor + thermocouple and sending all the information with one device in one message. You could action tasks based on the thermocouple onboard the node, e.g. opening a hatch if the battery is getting too hot.
 
@@ -49,33 +49,33 @@ We’ll need to download a few things to work with the software. We’ve got the
 
 We’ll also need to get our hardware setup. You’ll need a DroneCAN compatible flight controller or sniffer. We’ll use a Cube Orange. Then connect your Beyond Robotix CAN node to the flight controller via a CAN cable. Also, connect your STLINK to the debug port on the CAN node. Lastly, ensure the switch next to the debug port (`SW1`) is set to '1'.
 
-<figure><img src="../../.gitbook/assets/hardware-Photoroom.jpg" alt="" width="375"><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/thermocouple-tutorial-hardware-setup.jpg" alt="" width="375"><figcaption></figcaption></figure>
 
 With the repository downloaded and our tools installed, we can build the default example to make sure it’s all working correctly. The default example sends a "BatteryInfo" message which we'll see later.
 
-<figure><img src="../../.gitbook/assets/Picture1.png" alt="" width="563"><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/thermocouple-tutorial-platformio-build.png" alt="" width="563"><figcaption></figcaption></figure>
 
 You should then see “SUCCESS” shown in the terminal. If you don’t, make sure your STLINK is connected correctly and power is being given to the CAN node via the flight controller.&#x20;
 
-<figure><img src="../../.gitbook/assets/Picture3 (1).png" alt="" width="563"><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/thermocouple-tutorial-build-success.png" alt="" width="563"><figcaption></figcaption></figure>
 
 We can now see what CAN messages are being sent by the Node. We’ll use DroneCAN GUI tool in this example, however, Mission Planner can also be used for CAN packet inspection.&#x20;
 
 {% embed url="https://dronecan.github.io/GUI_Tool/Overview/" %}
 
-<figure><img src="../../.gitbook/assets/Picture4.png" alt="" width="310"><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/thermocouple-tutorial-dronecan-gui-tool.png" alt="" width="310"><figcaption></figcaption></figure>
 
 Once connected, we’ll see our Node showing in the list, (you may need to set the Local node ID, press the tick in the top left ish)
 
-<figure><img src="../../.gitbook/assets/Picture5.png" alt="" width="563"><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/thermocouple-tutorial-dronecan-gui-node-list.png" alt="" width="563"><figcaption></figcaption></figure>
 
 We can see the example parameters in Node properties:
 
-<figure><img src="../../.gitbook/assets/Picture7.png" alt="" width="375"><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/thermocouple-tutorial-dronecan-gui-node-parameters.png" alt="" width="375"><figcaption></figcaption></figure>
 
 And we can also see the battery message being sent (which can be found in Tools > Subscriber)
 
-<figure><img src="../../.gitbook/assets/Picture8.png" alt="" width="563"><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/thermocouple-tutorial-dronecan-gui-battery-message.png" alt="" width="563"><figcaption></figcaption></figure>
 
 We can see the temperature field which responds to the built in MCU temperature sensor. “Voltage” and “current” are showing the raw ADC values from PA1 and PA0 respectively.
 
@@ -228,11 +228,11 @@ This works as standard in PlatformIO debugging, with your normal build environme
 3. Change to the Debug VS code tab
 4. Start the debug session
 
-<figure><img src="../../.gitbook/assets/1.jpg" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/thermocouple-tutorial-debug-steps.jpg" alt=""><figcaption></figcaption></figure>
 
 After the program rebuilds, and starts running, the program now stops at where we set our breakpoint. We can see all the in scope variables on the left, and you can even hover over variables in the code to see their value.&#x20;
 
-<figure><img src="../../.gitbook/assets/image (14).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/thermocouple-tutorial-debug-breakpoint-variables.png" alt=""><figcaption></figcaption></figure>
 
 The bootloader stays on the node throughout, so you can keep updating firmware over CAN while you're developing.
 

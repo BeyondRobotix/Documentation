@@ -1,6 +1,6 @@
 # Air Data Moulde Original
 
-<figure><img src="../.gitbook/assets/ADM_bundle_edited-Photoroom.jpg" alt="" width="375"><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/air-data-module-bundle.jpg" alt="" width="375"><figcaption></figcaption></figure>
 
 The Air Data Module is made up of two layers of PCBs, the lower layer is the Beyond Robotix Micro CAN node and the upper layer is the Air Data Module layer. The two layers interconnect using a high density connector. The Air Data module comes in a PLA Case, with 200mm of hose and a pitot-static tube.
 
@@ -14,7 +14,7 @@ The CAN ports are common that can be used to daisy chain to other CAN nodes.
 
 The computation on the Air Data Module is performed on the [CAN Node](../can-ecosystem/micro-node.md). If you would like to terminate the CAN bus at the Air Data Module, a solder jumper labeled `120R` can be jumped.
 
-<figure><img src="../.gitbook/assets/Air Data Module Disassembled.jpg" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/air-data-module-disassembled.jpg" alt=""><figcaption></figcaption></figure>
 
 ## Parameters
 
@@ -62,26 +62,26 @@ Images of hole spacing and overall dimensions are provided below. Additionally, 
 
 ### Case Specifications
 
-<figure><img src="../.gitbook/assets/SLS Case.jpg" alt="" width="375"><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/air-data-module-case-sls-print.jpg" alt="" width="375"><figcaption></figcaption></figure>
 
 Specifcations for the size and shape of the case:
 
-{% file src="../.gitbook/assets/Mechanical Drawing Air Data Module Case.pdf" %}
+{% file src="../.gitbook/assets/air-data-module-case-mechanical-drawing.pdf" %}
 
 Files to 3D print/edit the included case:
 
-{% file src="../.gitbook/assets/BR AUAV ADM Lid.3mf" %}
+{% file src="../.gitbook/assets/air-data-module-case-lid.3mf" %}
 
-{% file src="../.gitbook/assets/BR AUAV ADM Base.3mf" %}
+{% file src="../.gitbook/assets/air-data-module-case-base.3mf" %}
 
-{% file src="../.gitbook/assets/BR ADM AUAV Lid.step" %}
+{% file src="../.gitbook/assets/air-data-module-case-lid.step" %}
 
-{% file src="../.gitbook/assets/BR ADM AUAV Base.step" %}
+{% file src="../.gitbook/assets/air-data-module-case-base.step" %}
 
 ### PCB Specifications
 
-{% file src="../.gitbook/assets/Mechanical Drawing Air Data Module.pdf" %}
+{% file src="../.gitbook/assets/air-data-module-pcb-mechanical-drawing.pdf" %}
 
-{% file src="../.gitbook/assets/AUAV DroneCAN Air Data Module.step" %}
+{% file src="../.gitbook/assets/air-data-module-pcb.step" %}
 
 Please note: this product is designed to require the case. Without it, the Micro CAN node will need mechanically stabilising through another means.
