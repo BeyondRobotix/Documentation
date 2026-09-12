@@ -28,5 +28,6 @@
 * [Core Autopilot](core-autopilot/README.md)
   * [Core Pinout](core-autopilot/core-pinout.md)
   * [Default Carrier Pinout](core-autopilot/default-carrier-pinout.md)
-  * [Advanced Configuration](core-autopilot/advanced-configuration.md)
+  * [Core Power](core-autopilot/core-power.md)
+  * [Advanced Configuration](core-autopilot/core-advanced-configuration.md)
 * [Engineering Change Notice](engineering-change-notice.md)
