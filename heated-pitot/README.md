@@ -1,5 +1,9 @@
 # Heated Pitot
 
+{% hint style="info" %}
+This page is under construction. Please contact admin@beyondrobotix.com for further information.
+{% endhint %}
+
 The Beyond Robotix Heated Pitot allows aircraft to continue reading airspeed during extreme icing and wet conditions. It's able to operate at high airspeeds, with significant heating power on demand if required. The probe integrates our AUAV airspeed sensor module, for altitude and airspeed estimates over wide speed range options. DroneCAN is used for readings and optional control, with support for both Ardupilot and PX4. Our electronics allow precise power control, meaning your avionics system is not put under stress even when high heating power is required.
 
 <div><figure><img src="../.gitbook/assets/heated-pitot-probe.png" alt="" width="375"><figcaption></figcaption></figure> <figure><img src="../.gitbook/assets/heated-pitot-iceland.png" alt="" width="375"><figcaption></figcaption></figure></div>
