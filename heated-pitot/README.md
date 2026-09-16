@@ -30,9 +30,13 @@ For large volume orders, we can support custom options:
 
 <figure><img src="../.gitbook/assets/heated-pitot-control-module-jst-xt30.png" alt="" width="375"><figcaption></figcaption></figure>
 
+{% hint style="warning" %}
+Below 12V, the maximum available heater power output will reduce. The pitot may operate down to 9V. Below 12V operation is not recommended.
+{% endhint %}
+
 | Parameter                   | Value                        |
 | --------------------------- | ---------------------------- |
-| Input Voltage Range         | 9 - 53 V                     |
+| Input Voltage Range         | 12 - 53 V                     |
 | Maximum Power Consumption   | 70 W (settable, see `P_MAX`) |
 | Standby Power               | 1 W                          |
 | Operating Temperature Range | -40 °C to +80 °C             |
