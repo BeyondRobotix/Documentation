@@ -30,7 +30,7 @@ With its mounting holes & 2.54mm header it can be integrated robustly into your 
   * 3.3v
 * Power input dioded + fused
 
-<div><figure><img src="../.gitbook/assets/white-Photoroom(1) (1).png" alt="" width="375"><figcaption></figcaption></figure> <figure><img src="../.gitbook/assets/white-Photoroom(2).png" alt="" width="375"><figcaption></figcaption></figure></div>
+<div><figure><img src="../.gitbook/assets/l431-can-node-front.png" alt="" width="375"><figcaption></figcaption></figure> <figure><img src="../.gitbook/assets/l431-can-node-back.png" alt="" width="375"><figcaption></figcaption></figure></div>
 
 ## Specifications
 
@@ -142,9 +142,9 @@ If there is no AP\_Periph bootloader present on the node (you've been using Ardu
 
 If the AP\_Periph bootloader is already present, the .bin file can be used in the usual way through Mission Planner.
 
-{% file src="../.gitbook/assets/CAN Node v1.0.bin" %}
+{% file src="../.gitbook/assets/can-node-v1.0-ap-periph.bin" %}
 
-{% file src="../.gitbook/assets/CAN Node v1.0 with bootloader.hex" %}
+{% file src="../.gitbook/assets/can-node-v1.0-ap-periph-with-bootloader.hex" %}
 
 For general background on AP\_Periph on our nodes, see:
 
@@ -158,7 +158,7 @@ For general background on AP\_Periph on our nodes, see:
 
 Full CAD including connectors can be found here:
 
-{% file src="../.gitbook/assets/STM32L4 Plain Node.step" %}
+{% file src="../.gitbook/assets/can-node-v1.0.step" %}
 
 ### Mounting holes & Board dimensions
 
@@ -166,7 +166,7 @@ Mounting holes are M2 (2.2mm diameter cutout)
 
 Dimensions in mm:
 
-<figure><img src="../.gitbook/assets/image (21).png" alt="" width="375"><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/can-node-v1.0-dimensions.png" alt="" width="375"><figcaption></figcaption></figure>
 
 ## Pinout / Interfaces
 
@@ -229,7 +229,7 @@ The following interfaces aer pinned out on the headers:
 
 How to use the GPIO/ADC/PWM pins depends on the firmware. If you are using the default AP\_Periph - see [#ap\_periph-default-shipped-firmware](l431-can-node.md#ap_periph-default-shipped-firmware "mention"). If you are using Arduino DroneCAN - see [#arduino-dronecan](./#arduino-dronecan "mention")
 
-<figure><img src="../.gitbook/assets/image (22).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/can-node-v1.0-header-pinout.png" alt=""><figcaption></figcaption></figure>
 
 ## Programming the board
 
@@ -244,6 +244,6 @@ The "STLINKV3" header is directly compatible with the [STLINK-V3MINIE](https://w
 
 The pins on the ST-LINK header could also be used with normal Arduino jumpers so a STLINKV2, or another SWD based debugger could be used. The pins are as follows:
 
-<figure><img src="../.gitbook/assets/image (5).png" alt=""><figcaption><p>STLINK Header</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/can-node-stlink-header-pinout.png" alt=""><figcaption><p>STLINK Header</p></figcaption></figure>
 
 <table><thead><tr><th width="246">Pin Number</th><th>Description</th></tr></thead><tbody><tr><td>1</td><td><mark style="color:orange;">NC</mark></td></tr><tr><td>2</td><td><mark style="color:orange;">NC</mark></td></tr><tr><td>3</td><td>5V in</td></tr><tr><td>4</td><td>SWD</td></tr><tr><td>5</td><td><mark style="color:blue;">GND</mark></td></tr><tr><td>6</td><td>SWC</td></tr><tr><td>7</td><td><mark style="color:blue;">GND</mark></td></tr><tr><td>8</td><td><mark style="color:orange;">NC</mark></td></tr><tr><td>9</td><td><mark style="color:orange;">NC</mark></td></tr><tr><td>10</td><td><mark style="color:blue;">GND</mark></td></tr><tr><td>11</td><td><mark style="color:orange;">NC</mark></td></tr><tr><td>12</td><td><mark style="color:orange;">NC</mark></td></tr><tr><td>13</td><td>UART2_TX</td></tr><tr><td>14</td><td>UART2_RX</td></tr></tbody></table>

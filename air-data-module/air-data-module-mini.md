@@ -6,7 +6,7 @@ description: Improve design of the Air Data Module - Compact and Reliable
 
 The Air Data Module Mini is an all in one board that reads airspeed and barometric altitude and outputs over DroneCAN. The module has a number of protection features including over-current protection, over and under-voltage protections, reverse polarity protection and ESD protection.
 
-<figure><img src="../.gitbook/assets/ADM Mini Top Bottom.png" alt="" width="375"><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/air-data-module-mini-top-bottom.png" alt="" width="375"><figcaption></figcaption></figure>
 
 ## Specifications
 
@@ -23,11 +23,11 @@ The main connector on the board is a JST-GH with the Pixhawk standard CAN pinout
 
 <table><thead><tr><th width="316" align="right">Pin</th><th>Function</th><th data-hidden>Notes</th></tr></thead><tbody><tr><td align="right">1</td><td>5V</td><td>Recommended: 4.5 - 6V</td></tr><tr><td align="right">2</td><td>CAN H</td><td></td></tr><tr><td align="right">3</td><td>CAN L</td><td></td></tr><tr><td align="right">4</td><td>GND</td><td></td></tr></tbody></table>
 
-<figure><img src="../.gitbook/assets/JST.png" alt="" width="375"><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/air-data-module-mini-jst-pinout.png" alt="" width="375"><figcaption></figcaption></figure>
 
 ## Extra Pins
 
-<figure><img src="../.gitbook/assets/Pads.png" alt="" width="375"><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/air-data-module-mini-extra-pads.png" alt="" width="375"><figcaption></figcaption></figure>
 
 The series of pads on the bottom can be used for other peripheral activities.
 
@@ -50,11 +50,11 @@ The circle pads are used for programming.
 
 A mechanical drawing of the Air Data Module Mini along with a step file. The pitot-static tube CAD can be found [here](https://grabcad.com/library/pitot-tube-5).
 
-<figure><img src="../.gitbook/assets/MechanicalDrawingSnap.png" alt="" width="328"><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/air-data-module-mini-mechanical-drawing.png" alt="" width="328"><figcaption></figcaption></figure>
 
-{% file src="../.gitbook/assets/Mechanical Drawing.pdf" %}
+{% file src="../.gitbook/assets/air-data-module-mini-mechanical-drawing.pdf" %}
 
-{% file src="../.gitbook/assets/AUAV ADM.step" %}
+{% file src="../.gitbook/assets/air-data-module-mini.step" %}
 
 ## Firmware
 
@@ -64,12 +64,12 @@ Below are the binaries that can be used to flash the Air Data Module Mini. You c
 Make sure you put the correct firmware on your Air Data Module Mini - Check your AUAV Sensor to see which version you need. No error will show if you upload the wrong firmware, but your airspeed reading will be incorrect.
 {% endhint %}
 
-{% file src="../.gitbook/assets/L05D.hex" %}
+{% file src="../.gitbook/assets/air-data-module-mini-firmware-l05d.hex" %}
 
-{% file src="../.gitbook/assets/L10D.hex" %}
+{% file src="../.gitbook/assets/air-data-module-mini-firmware-l10d.hex" %}
 
-{% file src="../.gitbook/assets/L30D.hex" %}
+{% file src="../.gitbook/assets/air-data-module-mini-firmware-l30d.hex" %}
 
-{% file src="../.gitbook/assets/L60D.hex" %}
+{% file src="../.gitbook/assets/air-data-module-mini-firmware-l60d.hex" %}
 
-{% file src="../.gitbook/assets/L100D.hex" %}
+{% file src="../.gitbook/assets/air-data-module-mini-firmware-l100d.hex" %}

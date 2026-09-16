@@ -10,7 +10,7 @@ The connector to the autopilot is a 6-pin JST-GH connector. The pinouts on the K
 
 The antenna connector is a U.Fl connector (Also known as IPEX). You can connect an antenna directly to the board or use a U.Fl to SMA adaptor to connect to a wider range of antennas.
 
-<figure><img src="../.gitbook/assets/Pinout (2).png" alt=""><figcaption><p>Kahuna Pinout</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/kahuna-pinout.png" alt=""><figcaption><p>Kahuna Pinout</p></figcaption></figure>
 
 ## Buttons and Jumpers
 
@@ -34,7 +34,7 @@ The Kahuna device features three status indicators: Air, Wi-Fi, and GCS.
 
 The table below outlines the meaning of the status light indications.
 
-<figure><img src="../.gitbook/assets/LEDDefinitions (1).png" alt=""><figcaption><p>LED Status Definitions*</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/kahuna-led-status-definitions.png" alt=""><figcaption><p>LED Status Definitions*</p></figcaption></figure>
 
 \*Kahuna V1.1 have GCS and Air labels swapped.
 
@@ -48,26 +48,26 @@ The table below outlines the meaning of the status light indications.
 | Current Continuous | 20 mA             |
 | Current Peak       | 250 mA            |
 
-<figure><img src="../.gitbook/assets/EngineeringDrawingV1.2.png" alt=""><figcaption><p>Physical Dimensions of the Kahuna</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/kahuna-dimensions-drawing.png" alt=""><figcaption><p>Physical Dimensions of the Kahuna</p></figcaption></figure>
 
-{% file src="../.gitbook/assets/KahunaV1.2 (2).step" %}
+{% file src="../.gitbook/assets/kahuna-v1.2.step" %}
 CAD file for the Kahuna
 {% endfile %}
 
 ## 3D Printed Case
 
-<figure><img src="../.gitbook/assets/Case Image CAD.png" alt=""><figcaption><p>Render of Case</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/kahuna-case-render.png" alt=""><figcaption><p>Render of Case</p></figcaption></figure>
 
-<figure><img src="../.gitbook/assets/Case.JPG" alt=""><figcaption><p>Kahuna in Case</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/kahuna-in-case.jpg" alt=""><figcaption><p>Kahuna in Case</p></figcaption></figure>
 
 Files are available to download and print here:
 
-{% file src="../.gitbook/assets/TopV2_2.STL" %}
+{% file src="../.gitbook/assets/kahuna-case-top.stl" %}
 
-{% file src="../.gitbook/assets/BaseV2_2.STL" %}
+{% file src="../.gitbook/assets/kahuna-case-base.stl" %}
 
 If you want to edit the parts, the raw files are here:
 
-{% file src="../.gitbook/assets/TopV2_2.SLDPRT" %}
+{% file src="../.gitbook/assets/kahuna-case-top.sldprt" %}
 
-{% file src="../.gitbook/assets/BaseV2_2.SLDPRT" %}
+{% file src="../.gitbook/assets/kahuna-case-base.sldprt" %}
