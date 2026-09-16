@@ -37,7 +37,11 @@ For large volume orders, we can support custom options:
 
 ### Power Consumption
 
-The pitot targets a set temperature and adjusts heater power output to meet temperature demand. We recommend a 60 degree target temperature to ensure ice is melted as quickly as possible. For this given target temperature, the power output varies depending on airspeed, atmospheric temperature, snow/water air content. 
+The pitot targets a set temperature and adjusts heater power output to meet temperature demand. We recommend a 60 degree target temperature to ensure ice is melted as quickly as possible. For this given target temperature, the power output varies depending on airspeed, atmospheric temperature, altitude, snow/water air content.
+
+The following shows power consumption varying with airspeed and atmospheric temperature at sea level, assuming dry conditions. To factor in melting ice, an additional 5W to all figures should be added to compensate for this.
+
+<figure><img src="../.gitbook/assets/heated-pitot-power.png" alt="" width="600"><figcaption></figcaption></figure>
 
 Some advanced parameters can be set to reduce power consumption depending on your operating scenaio. See below and contact admin@beyondrobotix.com if you would like to discuss.
 
