@@ -42,9 +42,7 @@ The same STM32L431 as the Micro Node, but as a standalone board rather than one 
 
 Our H7 node. Two fully independent CAN FD interfaces, a lot more processing power than the L431 nodes, and JST-GH connectors for serial, I2C, SPI and PWM following the same conventions as an autopilot.
 
-{% hint style="danger" %}
-**PLACEHOLDER - link needed:** store page embed, to match the sections above.
-{% endhint %}
+{% embed url="https://www.beyondrobotix.com/products/can-node-plus" %}
 
 <figure><img src="../.gitbook/assets/can-node-plus-cover.png" alt="" width="375"><figcaption><p>CAN Node Plus</p></figcaption></figure>
 

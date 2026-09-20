@@ -5,10 +5,6 @@ icon: microchip
 
 # CAN Node Plus
 
-{% hint style="warning" %}
-This page is a work in progress. The store link is still to be added, and a few details are marked as needing confirmation.
-{% endhint %}
-
 ## Overview
 
 The CAN Node Plus steps up from our L431 nodes to an STM32H723. It brings two fully independent CAN FD interfaces, considerably more processing power, and a set of JST-GH connectors following the same conventions as an autopilot, so standard peripherals plug straight in.
@@ -17,9 +13,7 @@ Like the rest of the range it runs [Arduino DroneCAN](arduino-dronecan/), so you
 
 <figure><img src="../.gitbook/assets/can-node-plus-cover.png" alt="" width="375"><figcaption></figcaption></figure>
 
-{% hint style="danger" %}
-**PLACEHOLDER - link needed:** store page embed, once the product is listed.
-{% endhint %}
+{% embed url="https://www.beyondrobotix.com/products/can-node-plus" %}
 
 * STM32H723VGHx processor - 550 MHz Cortex-M7, 1 MB flash
 * **2x independent CAN FD interfaces**, each with its own transceiver and its own JST-GH connector
