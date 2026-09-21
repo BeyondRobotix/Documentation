@@ -4,11 +4,15 @@ Documentation for [Beyond Robotix](https://www.beyondrobotix.com/) hardware and 
 
 ## Heated Pitot
 
+<img src=".gitbook/assets/heated-pitot-probe.png" alt="" width="120">
+
 Keeps aircraft airspeed readings accurate through extreme icing and wet conditions, with DroneCAN control and precise heater power management.
 
 * [Heated Pitot](heated-pitot/)
 
 ## Kahuna
+
+<img src=".gitbook/assets/Case Image CAD.png" alt="" width="120">
 
 A Wi-Fi telemetry unit for the Pixhawk ecosystem. Connect from any laptop or tablet with Mission Planner or QGroundControl, with multi-drone support and long range up to 2.5km.
 
@@ -16,6 +20,8 @@ A Wi-Fi telemetry unit for the Pixhawk ecosystem. Connect from any laptop or tab
 * [Quick Start Guide](kahuna/quick-start-guide.md)
 
 ## CAN Ecosystem
+
+<img src=".gitbook/assets/Front and Back.png" alt="" width="120">
 
 Hardware and firmware for building custom DroneCAN peripherals, from ready-made nodes to Arduino-based custom firmware.
 
@@ -29,6 +35,8 @@ Hardware and firmware for building custom DroneCAN peripherals, from ready-made 
 
 ## Air Data Module
 
+<img src=".gitbook/assets/Modules.png" alt="" width="120">
+
 A DroneCAN airspeed and altitude sensor built around the AllSensors AUAV pressure sensor, supporting a range of autopilots.
 
 * [Air Data Module](air-data-module/)
@@ -37,6 +45,8 @@ A DroneCAN airspeed and altitude sensor built around the AllSensors AUAV pressur
 * [Air Data Module Original](air-data-module/air-data-moulde-original.md) — the original two-layer design, mounted on a Micro Node
 
 ## RM3100 DroneCAN Compass
+
+<img src=".gitbook/assets/Mag Node RM3100 V0.2 Render2.png" alt="" width="120">
 
 A plug-and-play DroneCAN magnetometer node built around the PNI RM3100 sensor, with the standard Pixhawk JST-GH connector.
 
