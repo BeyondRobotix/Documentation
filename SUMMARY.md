@@ -27,7 +27,7 @@
 * [RM3100 DroneCAN Compass](rm3100-dronecan-compass.md)
 * [Core Autopilot](core-autopilot/README.md)
   * [Core Pinout](core-autopilot/core-pinout.md)
-  * [Default Carrier Pinout](core-autopilot/default-carrier-pinout.md)
+  * [Default Carrier](core-autopilot/default-carrier-pinout.md)
   * [Core Power](core-autopilot/core-power.md)
   * [Advanced Configuration](core-autopilot/core-advanced-configuration.md)
 * [Engineering Change Notice](engineering-change-notice.md)
