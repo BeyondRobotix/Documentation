@@ -21,7 +21,7 @@ A Wi-Fi telemetry unit for the Pixhawk ecosystem. Connect from any laptop or tab
 
 ## CAN Ecosystem
 
-<img src=".gitbook/assets/Front and Back.png" alt="" width="240">
+<img src=".gitbook/assets/micro-node-front-and-back.png" alt="" width="240">
 
 Hardware and firmware for building custom DroneCAN peripherals, from ready-made nodes to Arduino-based custom firmware.
 
@@ -35,7 +35,7 @@ Hardware and firmware for building custom DroneCAN peripherals, from ready-made 
 
 ## Air Data Module
 
-<img src=".gitbook/assets/Modules.png" alt="" width="240">
+<img src=".gitbook/assets/air-data-module-variants.png" alt="" width="240">
 
 A DroneCAN airspeed and altitude sensor built around the AllSensors AUAV pressure sensor, supporting a range of autopilots.
 
@@ -46,7 +46,7 @@ A DroneCAN airspeed and altitude sensor built around the AllSensors AUAV pressur
 
 ## RM3100 DroneCAN Compass
 
-<img src=".gitbook/assets/Mag Node RM3100 V0.2 Render2.png" alt="" width="240">
+<img src=".gitbook/assets/rm3100-compass-render.png" alt="" width="240">
 
 A plug-and-play DroneCAN magnetometer node built around the PNI RM3100 sensor, with the standard Pixhawk JST-GH connector.
 
