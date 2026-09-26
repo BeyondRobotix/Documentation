@@ -1,7 +1,11 @@
 
 # Core Autopilot
 
-<figure style="text-align: center"><img src="../.gitbook/assets/core-autopilot-board.png" alt="" width="375"><figcaption><p>Core</p></figcaption></figure>
+{% hint style="info" %}
+This page is under construction. Please contact admin@beyondrobotix.com for further information.
+{% endhint %}
+
+<figure style="text-align: center"><img src="../.gitbook/assets/core-autopilot-board.png" alt="" width="375"><figcaption><p>Beyond Robotix Core Autopilot </p></figcaption></figure>
 
 The Beyond Robotix Core is an Ardupilot and PX4 compatible autopilot, aimed to increase the flexibility and number of interfaces over other solutions whilst being simple to integrate into any drone. 16 PWMs, Ethernet, 7 serials, 2 CAN and I2C all contribute to ensure you can achieve what you need to.
 
@@ -58,6 +62,8 @@ USB signals are common between the USB-C connector on the side of the core and t
 - Analogue inputs are series-protected and filtered
 
 ## Mechanical
+
+The core and its carrier boards are designed to be removable from an aircraft after being mounted, all screws are top accessible which allows maintenance once the aircraft has been built. The core and carriers use M3 screws to keep tooling consistent.
 
 Carrier board mechanical (outline, mounting holes, STEP file) is covered on the [Default Carrier](default-carrier-pinout.md#mechanical) page.
 
