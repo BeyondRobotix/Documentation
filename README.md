@@ -52,6 +52,17 @@ A plug-and-play DroneCAN magnetometer node built around the PNI RM3100 sensor, w
 
 * [RM3100 DroneCAN Compass](rm3100-dronecan-compass.md)
 
+## Core Autopilot
+
+<img src=".gitbook/assets/core-autopilot-board.png" alt="" width="240">
+
+An ArduPilot and PX4 compatible autopilot with 16 PWMs, Ethernet, 7 serials, 2 CAN and I2C, built around a modular Core plus carrier board design.
+
+* [Core Autopilot](core-autopilot/)
+* [Core Pinout](core-autopilot/core-pinout.md) — integrate the Core into your own carrier board
+* [Default Carrier](core-autopilot/default-carrier-pinout.md) — pinout and mechanical for our reference carrier
+* [Core Power](core-autopilot/core-power.md)
+
 ## Reference
 
 * [Engineering Change Notice](engineering-change-notice.md) — hardware changes to our products (see GitHub releases for software changes)

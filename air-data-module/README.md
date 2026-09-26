@@ -8,7 +8,7 @@ description: DroneCAN enabled AUAV absolute and differential pressure sensor
 
 The Beyond Robotix Air Data Modules makes use of the Allsensors AUAV sensor. This module has a differential and absolute pressure sensors to estimate airspeed and altitude. The module works over DroneCAN with a variety of autopilots.
 
-<figure><img src="../.gitbook/assets/Modules.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/air-data-module-variants.png" alt=""><figcaption></figcaption></figure>
 
 There are 5 variants of the air data module, each with their own maximum speeds:
 

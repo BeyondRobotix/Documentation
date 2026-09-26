@@ -5,7 +5,7 @@ icon: industry
 
 # Micro Node
 
-<figure><img src="../.gitbook/assets/Front and Back.png" alt="" width="375"><figcaption><p>Micro Node</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/micro-node-front-and-back.png" alt="" width="375"><figcaption><p>Micro Node</p></figcaption></figure>
 
 The Beyond Robotix Micro Node allows you to create production grade PCBs without needing to worry about the complicated bit. Put the board to board connector on your project, wire in a sensor, a connector and now you have a CAN enabled project.
 
@@ -47,7 +47,7 @@ The equivalent JLCPCB component is C312960
 
 The footprint can be downloaded from the mouser page. Be sure to use this one! Pin numbers can be different on different footprints for the same part. We learnt the hard way.
 
-<figure><img src="../.gitbook/assets/Screenshot 2025-03-08 212952.png" alt=""><figcaption><p>Footprint pinout mapping. 1 bottom right, 2 top right.</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/micro-node-footprint-pinout-mapping.png" alt=""><figcaption><p>Footprint pinout mapping. 1 bottom right, 2 top right.</p></figcaption></figure>
 
 You'll notice our connector has far many more pins than the STM32 has outputs, we've chosen this due to stock availability, as well as we'll be able to use this same connector on future projects on STMs with higher pin counts.
 
@@ -108,15 +108,15 @@ The equivalent JLCPCB component is C2928168
 
 This drawing is for the hole and connector positions for the **carrier board,** not the node itself.
 
-<div align="left"><figure><img src="../.gitbook/assets/Node Development Board Layout (1).png" alt="" width="375"><figcaption><p>Layout with Dimensions</p></figcaption></figure> <figure><img src="../.gitbook/assets/Node Development Board Layout Real.png" alt="" width="304"><figcaption><p>Example layout on Node Development Board V1.0</p></figcaption></figure></div>
+<div align="left"><figure><img src="../.gitbook/assets/micro-node-carrier-layout-dimensions.png" alt="" width="375"><figcaption><p>Layout with Dimensions</p></figcaption></figure> <figure><img src="../.gitbook/assets/micro-node-carrier-layout-example.png" alt="" width="304"><figcaption><p>Example layout on Node Development Board V1.0</p></figcaption></figure></div>
 
 ## Template
 
 A Kicad template file with required libraries can be used as a starting point to make a custom carrier board.
 
-<figure><img src="../.gitbook/assets/Node Development Board Layout Render.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/micro-node-carrier-template-render.png" alt=""><figcaption></figcaption></figure>
 
-{% file src="../.gitbook/assets/Micro Node Carrier Template Rev A.zip" %}
+{% file src="../.gitbook/assets/micro-node-carrier-template-rev-a.zip" %}
 
 ## Software
 

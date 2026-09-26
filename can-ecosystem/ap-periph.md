@@ -36,4 +36,4 @@ We've working on merging our hwdef file into Ardupilot repository
 
 {% file src="../.gitbook/assets/AP_Periph.bin" %}
 
-{% file src="../.gitbook/assets/AP_Periph_with_bl (5).hex" %}
+{% file src="../.gitbook/assets/ap-periph-firmware-with-bootloader.hex" %}
