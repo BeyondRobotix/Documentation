@@ -31,7 +31,19 @@ Newer versions are now shipped with AP\_Periph (Ardupilots peripheral firmware).
 
 Our air data module runs on custom firmware which can be found here, including the latest firmware binaries:
 
-{% embed url="https://github.com/BeyondRobotix/AUAV-DroneCAN/releases/latest" %}
+{% hint style="danger" %}
+Make sure you put the correct firmware on your Air Data Module - Check your AUAV Sensor to see which version you need. No error will show if you upload the wrong firmware, but your airspeed reading will be incorrect.
+{% endhint %}
+
+{% file src="../.gitbook/assets/BeyondRobotix_AUAVL05D (1).bin" %}
+
+{% file src="../.gitbook/assets/BeyondRobotix_AUAVL10D (1).bin" %}
+
+{% file src="../.gitbook/assets/BeyondRobotix_AUAVL30D (1).bin" %}
+
+{% file src="../.gitbook/assets/BeyondRobotix_AUAVL60D (1).bin" %}
+
+{% file src="../.gitbook/assets/BeyondRobotix_AUAVL100D (1).bin" %}
 
 To update to the latest firmware, there are two methods you can use:
 

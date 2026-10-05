@@ -64,12 +64,12 @@ Below are the binaries that can be used to flash the Air Data Module Mini. You c
 Make sure you put the correct firmware on your Air Data Module Mini - Check your AUAV Sensor to see which version you need. No error will show if you upload the wrong firmware, but your airspeed reading will be incorrect.
 {% endhint %}
 
-{% file src="../.gitbook/assets/air-data-module-mini-firmware-l05d.hex" %}
+{% file src="../.gitbook/assets/BeyondRobotix_AUAVL05D.bin" %}
 
-{% file src="../.gitbook/assets/air-data-module-mini-firmware-l10d.hex" %}
+{% file src="../.gitbook/assets/BeyondRobotix_AUAVL10D.bin" %}
 
-{% file src="../.gitbook/assets/air-data-module-mini-firmware-l30d.hex" %}
+{% file src="../.gitbook/assets/BeyondRobotix_AUAVL30D.bin" %}
 
-{% file src="../.gitbook/assets/air-data-module-mini-firmware-l60d.hex" %}
+{% file src="../.gitbook/assets/BeyondRobotix_AUAVL60D.bin" %}
 
-{% file src="../.gitbook/assets/air-data-module-mini-firmware-l100d.hex" %}
+{% file src="../.gitbook/assets/BeyondRobotix_AUAVL100D.bin" %}
