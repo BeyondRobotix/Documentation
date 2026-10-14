@@ -9,7 +9,7 @@ icon: microchip
 
 The CAN Node Plus steps up from our L431 nodes to an STM32H723. It brings two fully independent CAN FD interfaces, considerably more processing power, and a set of JST-GH connectors following the same conventions as an autopilot, so standard peripherals plug straight in.
 
-Like the rest of the range it runs [Arduino DroneCAN](arduino-dronecan/), so you write a normal Arduino sketch and get DroneCAN, parameters and firmware update over CAN for free.
+Like the rest of the range it runs [Arduino DroneCAN](arduino-dronecan/), so you write a normal Arduino sketch and get DroneCAN, parameters and firmware update over CAN for free. It also runs [AP\_Periph](#firmware), ArduPilot's ready-made DroneCAN peripheral firmware, for when no custom firmware is needed.
 
 <figure><img src="../.gitbook/assets/can-node-plus-cover.png" alt="" width="375"><figcaption></figcaption></figure>
 
@@ -34,6 +34,108 @@ Like the rest of the range it runs [Arduino DroneCAN](arduino-dronecan/), so you
 * 32 x 32mm, with 4x M3 mounting holes on a 25 x 25mm square
 
 <div><figure><img src="../.gitbook/assets/can-node-plus-top.png" alt="" width="375"><figcaption><p>Top - the two CAN connectors (<code>C1</code>, <code>C2</code>), Serial 1 (<code>S1</code>), Serial 2 + I2C (<code>S2+I2C</code>), the debug header and the BOOT button</p></figcaption></figure> <figure><img src="../.gitbook/assets/can-node-plus-bottom.png" alt="" width="375"><figcaption><p>Bottom - USB-C, SPI, PWM, the <code>JP1</code> power bridge and the two <code>TERM</code> termination jumpers</p></figcaption></figure></div>
+
+## Firmware
+
+The board is primarily designed to be used with our **Arduino DroneCAN** library, so you can write your own firmware around your sensor with minimal boilerplate. It can also run **AP\_Periph**, ArduPilot's ready-made DroneCAN peripheral firmware, for when no custom firmware is needed.
+
+Both firmwares sit behind the same Beyond Robotix bootloader, so you can switch between them over CAN without an ST-LINK.
+
+### Arduino DroneCAN
+
+Build for the CAN Node Plus by selecting the `Micro-Node-Plus-App` environment in PlatformIO. Everything else works the same as on the rest of the range, with two additions this board is capable of: CAN FD, and running both CAN interfaces at once.
+
+{% content-ref url="arduino-dronecan/" %}
+[arduino-dronecan](arduino-dronecan/)
+{% endcontent-ref %}
+
+### AP\_Periph
+
+AP\_Periph requires no code and supports a wide range of common sensors out of the box. The board definition is `BR_CANNodePlus`.
+
+#### Default firmware features
+
+* **CAN** - both CAN interfaces run DroneCAN at the same time, node name `org.beyondrobotix.CANNodePlus`
+* **GPS** - u-blox, NMEA and other serial GPS on [Serial 2 + I2C](#serial-2-and-i2c), with moving baseline support
+* **Compass** - probed on the Serial 2 + I2C bus, so a GPS/compass module works from the one connector
+* **Barometer and airspeed** - I2C sensors
+* **Rangefinder** - compiled in, disabled by default
+* **Servo/PWM output** - 8 channels, see [PWM outputs](#pwm-outputs) below
+* **Relay output**
+* **Serial over DroneCAN** - any serial port can be tunnelled over CAN, for example to configure a GPS from the ground station through the autopilot
+* **Input voltage monitoring** - the 5V bus on `PB1`
+
+#### Serial ports
+
+| Connector | Port | Default use |
+| --------- | ---- | ----------- |
+| USB-C | `SERIAL0` | Console |
+| Serial 1 (`S1`) | `SERIAL1` | Free, with flow control (`UART1_RTSCTS`) |
+| Serial 2 + I2C (`S2+I2C`) | `SERIAL2` | GPS (`GPS_PORT` = `2`) |
+| Debug header | `SERIAL3` | Free. TX and RX are swapped on the board, `UART3_OPTIONS` is `8` by default to swap them back |
+
+Set `GPS_PORT` to a different serial port number to move the GPS, for example `1` for Serial 1.
+
+#### PWM outputs
+
+| Connector pin | Processor pin | Output (`OUTn_`) | GPIO |
+| ------------- | ------------- | ---------------- | ---- |
+| 2 | PA3 | 1 | 50 |
+| 3 | PA2 | 2 | 51 |
+| 4 | PA1 | 3 | 52 |
+| 5 | PE13 | 4 | 53 |
+| 6 | PA9 | 5 | 54 |
+| 7 | PA8 | 6 | 55 |
+| 8 | PC7 | 7 | 56 |
+| 9 | PC6 | 8 | 57 |
+
+Outputs 1-3 are driven by TIM2, outputs 4-6 by TIM1 and outputs 7-8 by TIM3. Outputs on the same timer share a rate and protocol.
+
+| Parameter               | Purpose                                      | Notes                                                                                             |
+| ----------------------- | -------------------------------------------- | ------------------------------------------------------------------------------------------------- |
+| `OUTn_FUNCTION`         | Assigns output function to channel _n_ (1-8) | `0` = Disabled. See `SRV_Channel::Aux_servo_function_t` for full list (e.g. Motor1, RCIN1, GPIO). |
+| `OUTn_MIN` / `OUTn_MAX` | PWM endpoint range (µs)                      | Per channel                                                                                       |
+| `OUTn_TRIM`             | Trim/neutral PWM (µs)                        | Per channel                                                                                       |
+| `OUTn_REVERSED`         | Reverse output direction                     | Per channel                                                                                       |
+| `ESC_RATE`              | Update rate for ESC/motor outputs            | Default 400 Hz                                                                                    |
+| `ESC_PWM_TYPE`          | Output protocol (OneShot/DShot/etc.)         | Default 0 (normal PWM)                                                                            |
+
+#### Other GPIO
+
+| Processor pin | GPIO | Use |
+| ------------- | ---- | --- |
+| PA5 | 80 | [5V peripheral rail](#the-5v-peripheral-rail) enable, on by default. Set low with a relay to cut power to the peripheral connectors |
+| PB0 | 90 | Green LED |
+
+#### Firmware files and flashing
+
+The CAN Node Plus keeps the Beyond Robotix bootloader with both firmwares. There is no AP\_Periph bootloader for this board and no "with bootloader" file - only the `.bin` application.
+
+**Over CAN** - from a board already running AP\_Periph or Arduino DroneCAN, update the node with the `.bin` file in the usual way through Mission Planner's DroneCAN page (or the DroneCAN GUI Tool). The node hands over to the bootloader, which downloads and starts the new firmware.
+
+**With an ST-LINK** - flash the `.bin` at address `0x08020000`, for example with STM32CubeProgrammer. Do not erase the whole chip or write to `0x08000000`, as that is where the bootloader lives.
+
+```
+openocd -f interface/stlink.cfg -f target/stm32h7x.cfg \
+  -c "program can-node-plus-ap-periph.bin 0x08020000 verify reset exit"
+```
+
+{% file src="../.gitbook/assets/can-node-plus-ap-periph.bin" %}
+
+If the bootloader is ever lost, flash `bootloader.bin` from the `variants/MicroNodePlus` folder of [br\_platformio\_hwdef](https://github.com/BeyondRobotix/br_platformio_hwdef) at `0x08000000` with an ST-LINK, or over USB using [DFU](#dfu), then load the application again.
+
+The source is the `BR_CANNodePlus` board in our [ArduPilot fork](https://github.com/BeyondRobotix/ardupilot/tree/CAN-Node-Plus-Periph/libraries/AP_HAL_ChibiOS/hwdef/BR_CANNodePlus). To build it yourself:
+
+```
+./waf configure --board BR_CANNodePlus
+./waf AP_Periph
+```
+
+For general background on AP\_Periph on our nodes, see:
+
+{% content-ref url="ap-periph.md" %}
+[ap-periph.md](ap-periph.md)
+{% endcontent-ref %}
 
 ## Mechanical
 
@@ -244,11 +346,3 @@ Pin 3 is **3.3V**, not 5V as on the Micro Node debug header - this header will n
 ### DFU
 
 There is a BOOT0 button on the board. Holding it while resetting the node starts the processor's built in bootloader, which can be used to recover a board over USB if the bootloader is ever lost.
-
-## Using it with Arduino DroneCAN
-
-Build for the CAN Node Plus by selecting the `Micro-Node-Plus-App` environment in PlatformIO. Everything else works the same as on the rest of the range, with two additions this board is capable of: CAN FD, and running both CAN interfaces at once.
-
-{% content-ref url="arduino-dronecan/" %}
-[arduino-dronecan](arduino-dronecan/)
-{% endcontent-ref %}
