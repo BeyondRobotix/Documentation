@@ -5,9 +5,16 @@ icon: robot-astromech
 
 # AP Periph
 
-We support AP\_Periph based firmware's for our CAN node. The Nodes ship with a generic AP\_periph firmware by default.
+We support AP\_Periph based firmware's for our CAN nodes. Each board has its own AP\_Periph build, documented on that board's page:
 
-## Default firmware features
+* [Micro Node and CAN Node](l431-can-node.md#firmware) (STM32L431)
+* [CAN Node Plus](can-node-plus.md#firmware) (STM32H723)
+
+## Micro Node and CAN Node
+
+The L431 nodes ship with a generic AP\_periph firmware by default.
+
+### Default firmware features
 
 * 6 PWMs/GPIOs
   * PA0 - PWM 1 - GPIO 50
@@ -24,7 +31,7 @@ We support AP\_Periph based firmware's for our CAN node. The Nodes ship with a g
 
 
 
-## Firmware files and flashing
+### Firmware files and flashing
 
 If there is no AP periph bootloader present on the node (you've been using Arduino DroneCAN for example) then AP\_Periph\_with\_bl.hex needs flashing with STM cube Programmer using STLINK or UART.&#x20;
 
@@ -37,3 +44,11 @@ We've working on merging our hwdef file into Ardupilot repository
 {% file src="../.gitbook/assets/AP_Periph.bin" %}
 
 {% file src="../.gitbook/assets/ap-periph-firmware-with-bootloader.hex" %}
+
+## CAN Node Plus
+
+The CAN Node Plus runs AP\_Periph from our own bootloader rather than an AP\_Periph bootloader, so the same board can move between AP\_Periph and Arduino DroneCAN over CAN. Only the `.bin` file is needed. Defaults, port assignments and firmware files are on the board page:
+
+{% content-ref url="can-node-plus.md" %}
+[can-node-plus.md](can-node-plus.md)
+{% endcontent-ref %}
